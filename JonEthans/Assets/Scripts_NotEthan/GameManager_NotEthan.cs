@@ -8,6 +8,7 @@ public class GameManager_NotEthan : MonoBehaviour
     void Start()
     {
         // I helped - Vaarun
+        // No you Didnt - Jon
     }
 
     // Update is called once per frame
