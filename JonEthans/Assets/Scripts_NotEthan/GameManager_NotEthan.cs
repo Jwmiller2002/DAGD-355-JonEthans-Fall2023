@@ -7,7 +7,7 @@ public class GameManager_NotEthan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // I helped - Vaarun
     }
 
     // Update is called once per frame
