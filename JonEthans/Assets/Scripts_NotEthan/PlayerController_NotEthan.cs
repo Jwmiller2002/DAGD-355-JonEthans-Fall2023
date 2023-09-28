@@ -24,6 +24,11 @@ public class PlayerController_NotEthan : MonoBehaviour
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
         inputVertical = Input.GetAxisRaw("Vertical");
+
+        Vector3 mousePos = Input.mousePosition;
+        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
+        transform.up = direction;
     }
 
     // Fixed Update is called as per a fixed rate
