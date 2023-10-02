@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerMovement_EthanH : MonoBehaviour
 {
 
+    public Bat_EthanH batPrefab;
     private Rigidbody2D rb;
-    private GameObject player;
-    private GameObject bat;
     public float speed = 5f;
+    private float attackRate;
+    public float startAttackRate = 0.3f;
+
+    public Transform attackPos;
+    public LayerMask whatIsEnemy;
+    public float attackRange;
+    public int damage = 5;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player");
-        bat = player.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -42,5 +46,39 @@ public class PlayerMovement_EthanH : MonoBehaviour
 
 
         transform.position = pos;
+
+        if(Input.GetKeyDown("e"))
+        {
+            for(int i = 0; i < 3; i++)
+            {
+                Vector3 spawnPoint = transform.position;
+                Quaternion rotation = transform.rotation;
+                Bat_EthanH bat = Instantiate(batPrefab, spawnPoint, rotation);
+            }
+        }
+
+        if(attackRate <= 0)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+                for(int i = 0; i < enemiesToDamage.Length; i++)
+                {
+                    enemiesToDamage[i].GetComponent<Enemies_EthanH>().takeDamage(damage);
+                }
+            }
+
+            attackRate = startAttackRate;
+        }
+        else
+        {
+            attackRate -= Time.deltaTime;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 }
