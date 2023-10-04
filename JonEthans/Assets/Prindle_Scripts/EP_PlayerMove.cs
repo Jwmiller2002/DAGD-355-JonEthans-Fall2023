@@ -14,6 +14,6 @@ public class EP_PlayerMove : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical"); 
 
-        transform.position += new Vector3(h,v,0f);
+        transform.position += new Vector3(h,v,0f) *speed *Time.deltaTime;
     }
 }
