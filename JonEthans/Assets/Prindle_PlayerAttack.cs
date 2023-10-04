@@ -30,7 +30,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            //other.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             Debug.Log("Enemy Hit");
         }
     }
