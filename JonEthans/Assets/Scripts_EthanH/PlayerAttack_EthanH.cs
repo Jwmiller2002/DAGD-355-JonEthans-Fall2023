@@ -27,11 +27,17 @@ public class PlayerAttack_EthanH : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Attack");
-                attackRate = attackSpeed;
-            } else if (Input.GetMouseButtonDown(1) && level >= 4)
+                attackRate = 1;
+            }
+            else if (Input.GetMouseButtonDown(1) && level >= 4)
             {
                 anim.SetTrigger("RAttack");
-                attackRate = attackSpeed;
+                attackRate = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && level >= 3)
+            {
+                anim.SetTrigger("Ultimate");
+                attackRate = 11;
             }
         }
         else
@@ -44,13 +50,24 @@ public class PlayerAttack_EthanH : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<Enemies_EthanH>().takeDamage(damage);
+            if(level >= 7)
+            {
+
+            }
+            else if(level >= 2)
+            {
+
+            }
+            else
+            {
+                other.GetComponent<Enemies_EthanH>().takeDamage(damage);
+            }
         }
         if (other.tag == "Bullet")
         {
             if(level >= 8)
             {
-
+                
             }
             else if(level >= 1)
             {
