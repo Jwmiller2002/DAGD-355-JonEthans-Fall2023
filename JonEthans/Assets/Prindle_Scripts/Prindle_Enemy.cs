@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class Prindle_Enemy : MonoBehaviour
     public Transform firingPoint;
     public GameObject bulletPrefab;
 
+    private Boolean stunned = false;
+    private Boolean slowed = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +29,16 @@ public class Prindle_Enemy : MonoBehaviour
     }
     private void Update()
     {
+        if (stunned)
+        {
+            timeToFire += 1;
+            stunned = false;
+        }
+        if (slowed)
+        {
+            speed -= 3;
+            slowed = false;
+        }
         if (!target)
         {
             GetTarget();
@@ -87,6 +101,21 @@ public class Prindle_Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("died");
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            if (other.tag == "Ultimate")
+            {
+                slowed = true;
+                stunned = true;
+            }
+            if (other.tag == "Tacticle")
+            {
+                stunned = true;
+            }
         }
     }
 }
