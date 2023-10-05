@@ -17,11 +17,13 @@ public class EP_PlayerMove : MonoBehaviour
 
         transform.position += new Vector3(h,v,0f) *speed *Time.deltaTime;
     }
-    private void OnCollisionEnter2D(Collision other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            
             Destroy(other.gameObject);
+            Debug.Log("Shot");
             health -= damage;
             if (health <= 0)
             {

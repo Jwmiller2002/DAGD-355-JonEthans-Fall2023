@@ -43,7 +43,7 @@ public class Prindle_Enemy : MonoBehaviour
         if(timeToFire <= 0)
         {
             Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation);
-            Debug.Log("Shoot");
+            
             timeToFire = fireRate;
         }
         else
