@@ -499,6 +499,7 @@ MonoBehaviour:
   speed: 12
   damage: 0
   health: 20
+  level: {fileID: 1272604648}
 --- !u!95 &1272604644
 Animator:
   serializedVersion: 5
@@ -535,6 +536,7 @@ MonoBehaviour:
   anim: {fileID: 1272604644}
   meleeSpeeed: 0.5
   damage: 25
+  level: {fileID: 0}
 --- !u!50 &1272604646
 Rigidbody2D:
   serializedVersion: 4

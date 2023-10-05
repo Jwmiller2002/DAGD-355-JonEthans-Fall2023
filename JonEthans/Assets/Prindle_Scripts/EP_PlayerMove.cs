@@ -9,7 +9,7 @@ public class EP_PlayerMove : MonoBehaviour
     public float speed;
     public float damage =5f;
     public float health = 20f;
-
+    public Prindle_PlayerLevel level;
     private Vector2 mousePos;
     // Update is called once per frame
     void Update()

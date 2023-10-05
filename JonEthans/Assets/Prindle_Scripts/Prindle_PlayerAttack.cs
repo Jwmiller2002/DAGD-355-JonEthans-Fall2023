@@ -8,9 +8,10 @@ public class Prindle_PlayerAttack : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private float meleeSpeeed;
     [SerializeField] private float damage;
-
-    float timeUntilMelee;
-
+    public Prindle_PlayerLevel level;
+    float timeUntilMelee =0f;
+    public float ultiTimer =0f;
+    public float tacttTimer =0f;
     private void Update()
     {
         if(timeUntilMelee <= 0f)
@@ -18,20 +19,48 @@ public class Prindle_PlayerAttack : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Attack");
-                timeUntilMelee = meleeSpeeed;
+                timeUntilMelee = level.weaponSpeed;
             }
         }
         else
         {
             timeUntilMelee -= Time.deltaTime;
         }
+        if (tacttTimer <= 0)
+        {
+            if(Input.GetMouseButtonDown(1) && level.canTact == true)
+            {
+
+
+                tacttTimer = level.tactTimer;
+            }
+        }
+        else
+        {
+            tacttTimer =-Time.deltaTime;
+        }
+        if (ultiTimer <= 0)
+        {
+            if(Input.GetKeyDown("e") && level.canTact == true)
+            {
+
+
+                ultiTimer = level.ultTimer;
+            }
+        }
+        else
+        {
+            ultiTimer -= Time.deltaTime;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
-            other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
+            other.GetComponent<Prindle_Enemy>().TakeDamage(level.weaponDamage);
+            level.xpNeeded -= 35;
             Debug.Log("Enemy Hit");
+            
         }
     }
 }
