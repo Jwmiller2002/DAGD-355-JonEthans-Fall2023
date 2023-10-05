@@ -1,52 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController_NotEthan : MonoBehaviour
 {
-    public float moveSpeed = 5f;
     public Rigidbody2D rb;
 
-    private Vector2 moveDirection;
-    private float speedLimiter = 0.7f;
-    private float inputHorizontal;
-    private float inputVertical;
+    private Vector2 moveInput, pointerInput;
+
+    [SerializeField]
+    private InputActionReference movement, attack, pointerPosition;
+
+    [SerializeField]
+    public float maxSpeed = 10, acceleration = 50, decceleration = 100;
+
+    [SerializeField]
+    private float currentSpeed = 0;
+    private Vector2 oldMovementInput;
+    private Vector2 movementInput { get; set; }
+
+    private WeaponParent_NotEthan weaponParent;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        weaponParent = GetComponentInChildren<WeaponParent_NotEthan>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
+        pointerInput = GetPointerInput();
+        weaponParent.PointerPosition = pointerInput;
+        moveInput = movement.action.ReadValue<Vector2>();
 
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        Vector2 direction = new Vector2(mousePos.x - transform.position.x, mousePos.y - transform.position.y);
-        transform.up = direction;
+        movementInput = moveInput;
     }
 
-    // Fixed Update is called as per a fixed rate
-    void FixedUpdate()
+    private Vector2 GetPointerInput() 
     {
-        if (inputHorizontal != 0 || inputVertical != 0)
+        Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();
+        mousePos.z = Camera.main.nearClipPlane;
+        return Camera.main.ScreenToWorldPoint(mousePos);
+        
+    }
+    private void FixedUpdate()
+    {
+        if (movementInput.magnitude > 0 && currentSpeed >= 0)
         {
-            if (inputHorizontal != 0 && inputVertical != 0)
-            {
-                inputHorizontal *= speedLimiter;
-                inputVertical *= speedLimiter;
-            }
-
-            rb.velocity = new Vector2(inputHorizontal * moveSpeed, inputVertical * moveSpeed);
+            oldMovementInput = movementInput;
+            currentSpeed += acceleration * maxSpeed * Time.deltaTime;
         }
         else
         {
-            rb.velocity = new Vector2(0, 0);
+            currentSpeed -= decceleration + maxSpeed * Time.deltaTime;
         }
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+        rb.velocity = oldMovementInput * currentSpeed;
     }
 }
