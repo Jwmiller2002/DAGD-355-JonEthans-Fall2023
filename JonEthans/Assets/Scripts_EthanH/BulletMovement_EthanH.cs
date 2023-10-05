@@ -8,6 +8,7 @@ public class BulletMovement_EthanH : MonoBehaviour
     private GameObject player;
     public float force = 500.0f;
     public float lifeTime = 10.0f;
+    public float returnSpeed;
 
     private Rigidbody2D rb;
 
@@ -23,11 +24,20 @@ public class BulletMovement_EthanH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        lifeTime -= Time.deltaTime;
+        if (lifeTime <= 0f)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void Deflect(Vector2 direction)
+    {
+        rb.velocity = direction * returnSpeed;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }
