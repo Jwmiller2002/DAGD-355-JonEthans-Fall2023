@@ -7,7 +7,8 @@ public class EP_PlayerMove : MonoBehaviour
     // Start is called before the first frame update
 
     public float speed;
-   
+    public float damage =5;
+    public float health = 20;
     // Update is called once per frame
     void Update()
     {
@@ -15,5 +16,17 @@ public class EP_PlayerMove : MonoBehaviour
         float v = Input.GetAxis("Vertical"); 
 
         transform.position += new Vector3(h,v,0f) *speed *Time.deltaTime;
+    }
+    private void OnCollisionEnter2D(Collision other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Destroy(other.gameObject);
+            health -= damage;
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
