@@ -404,11 +404,11 @@ GameObject:
   - component: {fileID: 1272604641}
   - component: {fileID: 1272604640}
   - component: {fileID: 1272604642}
-  - component: {fileID: 1272604643}
   - component: {fileID: 1272604644}
   - component: {fileID: 1272604647}
   - component: {fileID: 1272604646}
   - component: {fileID: 1272604645}
+  - component: {fileID: 1272604648}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -499,18 +499,6 @@ MonoBehaviour:
   speed: 12
   damage: 0
   health: 20
---- !u!114 &1272604643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272604639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da34a5304fd3ae48bfba4089560c6d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1272604644
 Animator:
   serializedVersion: 5
@@ -609,6 +597,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1272604648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272604639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d62f59d1898434b8e6c9f7f086c196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  xp: 0
+  weaponDamage: 25
+  weaponSpeed: 0.5
+  canTact: 0
+  canUlt: 0
 --- !u!1 &1966140568
 GameObject:
   m_ObjectHideFlags: 0
