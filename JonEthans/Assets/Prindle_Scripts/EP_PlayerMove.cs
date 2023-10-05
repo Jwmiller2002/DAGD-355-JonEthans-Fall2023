@@ -7,9 +7,9 @@ public class EP_PlayerMove : MonoBehaviour
     // Start is called before the first frame update
 
     public float speed;
-    public float damage =5f;
+    public float playerhurtdamage =5f;
     public float health = 20f;
-    public Prindle_PlayerLevel level;
+    
     private Vector2 mousePos;
     // Update is called once per frame
     void Update()
@@ -30,7 +30,7 @@ public class EP_PlayerMove : MonoBehaviour
             
             Destroy(other.gameObject);
             Debug.Log("Shot");
-            health -= damage;
+            health -= playerhurtdamage;
             if (health <= 0)
             {
                 Destroy(gameObject);

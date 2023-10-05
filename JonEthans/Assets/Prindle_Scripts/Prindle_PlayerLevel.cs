@@ -9,8 +9,8 @@ public class Prindle_PlayerLevel : MonoBehaviour
     public float xpNeeded =50;
     public float xpmax =50;
 
-    public float weaponDamage;
-    public float weaponSpeed;
+    
+    public float weaponSpeed=4;
 
     public Boolean canTact =false;
     public Boolean canUlt =false;
@@ -33,14 +33,14 @@ public class Prindle_PlayerLevel : MonoBehaviour
             xpNeeded = xpmax * 2;
             xpmax = xpNeeded;
             level += 1;
+            print("levelUP");
         }
 
         switch (level)
         {
             case 0:
-
-                weaponDamage = 10f;
-                weaponSpeed = 2f;
+                print("level0");
+                weaponSpeed = 4f;
                 break;
             case 1:
 
@@ -51,7 +51,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 break;
             case 2:
                 print("level2");
-                weaponDamage =15f;
+                
                 weaponSpeed =1.5f;
                 break;
             case 3:
@@ -68,8 +68,8 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 ultTimer = 8;
                 break;
             case 7:
-                weaponDamage = 25;
-                weaponDamage = 1;
+                
+                weaponSpeed = 1;
                 break;
             case 8:
                 tactTimer = 4;
@@ -80,7 +80,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
             case 10:
                 ultTimer = 6;
                 tactTimer = 3;
-                weaponDamage = 50;
+                
                 weaponSpeed = 0.5f;
                 print("MAX");
                 break;

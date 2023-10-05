@@ -7,11 +7,16 @@ public class Prindle_PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Animator anim;
     [SerializeField] private float meleeSpeeed;
-    [SerializeField] private float damage;
+    [SerializeField] private float damage =25;
     public Prindle_PlayerLevel level;
+    public GameObject player;
     float timeUntilMelee =0f;
     public float ultiTimer =0f;
     public float tacttTimer =0f;
+    private void Start()
+    {
+        level = player.GetComponent<Prindle_PlayerLevel>();
+    }
     private void Update()
     {
         if(timeUntilMelee <= 0f)
@@ -20,6 +25,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
             {
                 anim.SetTrigger("Attack");
                 timeUntilMelee = level.weaponSpeed;
+                print(timeUntilMelee);
             }
         }
         else
@@ -57,7 +63,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     {
         if(other.tag == "Enemy")
         {
-            other.GetComponent<Prindle_Enemy>().TakeDamage(level.weaponDamage);
+            other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             level.xpNeeded -= 35;
             Debug.Log("Enemy Hit");
             
