@@ -47,6 +47,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 print("level1");
                 canTact = true;
                 tactTimer = 8;
+                //print(tactTimer);
                 
                 break;
             case 2:
