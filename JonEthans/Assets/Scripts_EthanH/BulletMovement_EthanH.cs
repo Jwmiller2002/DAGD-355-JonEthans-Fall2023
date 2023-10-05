@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BulletMovement_EthanH : MonoBehaviour
 {
-    public float speed = 500.0f;
+
+    private GameObject player;
+    public float force = 500.0f;
     public float lifeTime = 10.0f;
 
     private Rigidbody2D rb;
@@ -13,22 +15,19 @@ public class BulletMovement_EthanH : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 direction = player.transform.position - transform.position;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    public void Shoot(Vector2 direction)
-    {
-        rb.AddForce(direction * this.speed);
-        Destroy(this.gameObject, this.lifeTime);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 }
