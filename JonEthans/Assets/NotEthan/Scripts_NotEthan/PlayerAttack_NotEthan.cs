@@ -12,7 +12,7 @@ public class PlayerAttack_NotEthan : MonoBehaviour
 
     [SerializeField] private float damage;
 
-    float timeUntiMelee;
+    float timeUntiMelee = .1f;
 
     
 
