@@ -8,7 +8,7 @@ public class PlayerMovement_NotEthan : MonoBehaviour
     public float playerSpeed = 30f;
     private Rigidbody2D rb;
 
-
+    bool facingRight = true;
 
 
     // Start is called before the first frame update
@@ -27,11 +27,20 @@ public class PlayerMovement_NotEthan : MonoBehaviour
     // Update is called once per second
     void FixedUpdate()
     {
-        if (Input.GetMouseButtonDown(1) == false)
+
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        transform.position += new Vector3(h, v, 0f) * playerSpeed * Time.deltaTime;
+
+        if (h > 0 && facingRight == false)
         {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
-            transform.position += new Vector3(h, v, 0f) * playerSpeed * Time.deltaTime;
+            facingRight = true;
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (h < 0 && facingRight == true)
+        {
+            facingRight=false;
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
         }
     }
 
