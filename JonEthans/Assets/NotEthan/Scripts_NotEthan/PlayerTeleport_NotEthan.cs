@@ -30,8 +30,6 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 teleport();
-                anim.SetTrigger("Teleport");
-                timeUntilTeleport = teleportCooldown;
             }
         }
         else
@@ -43,5 +41,7 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     void teleport()
     {
         rb.MovePosition(pos);
+        anim.SetTrigger("Teleport");
+        timeUntilTeleport = teleportCooldown;
     }
 }

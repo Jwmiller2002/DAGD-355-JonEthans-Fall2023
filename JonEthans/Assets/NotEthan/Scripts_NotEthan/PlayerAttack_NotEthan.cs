@@ -41,10 +41,11 @@ public class PlayerAttack_NotEthan : MonoBehaviour
 
     private void onTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "enemy") 
+        Debug.Log("Hit");
+        if (other.tag == "Enemy") 
         {
             //other.GetComponent<enemy_NotEthan>().takeDamage(damage);
-            Debug.Log("Hit");
+            Debug.Log("ENEMY Hit");
         }
     }
 }
