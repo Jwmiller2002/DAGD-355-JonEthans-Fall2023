@@ -7,6 +7,7 @@ public class PlayerMovement_NotEthan : MonoBehaviour
 {
     public float playerSpeed = 30f;
     private Rigidbody2D rb;
+    public Animator anim;
 
     bool facingRight = true;
 
@@ -31,6 +32,7 @@ public class PlayerMovement_NotEthan : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         transform.position += new Vector3(h, v, 0f) * playerSpeed * Time.deltaTime;
+        anim.SetFloat("Speed", Mathf.Abs(h));
 
         if (h > 0 && facingRight == false)
         {
