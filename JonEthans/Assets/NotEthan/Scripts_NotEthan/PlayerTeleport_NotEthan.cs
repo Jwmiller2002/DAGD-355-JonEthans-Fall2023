@@ -10,6 +10,8 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
 
     Vector3 mousePos;
     Vector2 pos = new Vector2(0f, 0f);
+
+    [SerializeField] private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 teleport();
+                anim.SetTrigger("Teleport");
                 timeUntilTeleport = teleportCooldown;
             }
         }
