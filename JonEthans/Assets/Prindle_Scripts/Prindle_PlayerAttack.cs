@@ -13,13 +13,15 @@ public class Prindle_PlayerAttack : MonoBehaviour
     float timeUntilMelee =0f;
     public float ultiTimer =0f;
     public float tacttTimer =0f;
+    
     private void Start()
     {
         level = player.GetComponent<Prindle_PlayerLevel>();
     }
     private void Update()
     {
-        if(timeUntilMelee <= 0f)
+        
+        if (timeUntilMelee <= 0f)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -37,7 +39,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
             if(Input.GetMouseButtonDown(1) && level.canTact == true)
             {
 
-
+                anim.SetTrigger("tact");
                 tacttTimer = level.tactTimer;
             }
         }
@@ -50,8 +52,9 @@ public class Prindle_PlayerAttack : MonoBehaviour
             if(Input.GetKeyDown("e") && level.canTact == true)
             {
 
-
+                anim.SetTrigger("ult");
                 ultiTimer = level.ultTimer;
+                print("eeee");
             }
         }
         else
