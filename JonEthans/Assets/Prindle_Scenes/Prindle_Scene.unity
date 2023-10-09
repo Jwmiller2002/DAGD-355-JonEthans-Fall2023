@@ -244,7 +244,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.2}
+    oldSize: {x: 0.12, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -281,7 +281,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.41758826, w: 0.9086364}
   m_LocalPosition: {x: -0.344, y: 0.217, z: 0}
-  m_LocalScale: {x: 2.655826, y: 3.0703342, z: 0.44315}
+  m_LocalScale: {x: 2.655826, y: 3.1848576, z: 0.44315}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1794582430}
@@ -1083,6 +1083,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.754717
       objectReference: {fileID: 0}
+    - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+      propertyPath: distanceToStop
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+      propertyPath: distanceToShoot
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -1101,11 +1109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6181166863255280832, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.904552
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 6181166863255280832, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3734
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 6181166863255280832, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: m_LocalPosition.z
