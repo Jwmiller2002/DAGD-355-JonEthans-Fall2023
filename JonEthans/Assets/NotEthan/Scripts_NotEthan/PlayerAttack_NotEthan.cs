@@ -44,7 +44,7 @@ public class PlayerAttack_NotEthan : MonoBehaviour
         Debug.Log("Hit");
         if (other.tag == "Enemy") 
         {
-            //other.GetComponent<enemy_NotEthan>().takeDamage(damage);
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
             Debug.Log("ENEMY Hit");
         }
     }

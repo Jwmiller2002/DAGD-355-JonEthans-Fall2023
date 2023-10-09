@@ -41,6 +41,7 @@ public class PlayerMovement_NotEthan : MonoBehaviour
             verticalInput = Input.GetAxis("Vertical");
             transform.position += new Vector3(horizontalInput, verticalInput, 0f) * playerSpeed * Time.deltaTime;
             anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
+            anim.SetFloat("Speed", Mathf.Abs(verticalInput));
         }
 
             if (horizontalInput > 0 && facingRight == false)
