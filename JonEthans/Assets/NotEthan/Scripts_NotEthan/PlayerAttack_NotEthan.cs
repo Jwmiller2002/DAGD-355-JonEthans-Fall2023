@@ -10,7 +10,7 @@ public class PlayerAttack_NotEthan : MonoBehaviour
 
     [SerializeField] private float meleeSpeed;
 
-    [SerializeField] private float damage;
+    public float damage;
 
     float timeUntiMelee = .1f;
 
@@ -39,13 +39,5 @@ public class PlayerAttack_NotEthan : MonoBehaviour
         }
     }
 
-    private void onTriggerEnter2D(Collider2D other)
-    {
-        Debug.Log("Hit");
-        if (other.tag == "Enemy") 
-        {
-            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
-            Debug.Log("ENEMY Hit");
-        }
-    }
+
 }
