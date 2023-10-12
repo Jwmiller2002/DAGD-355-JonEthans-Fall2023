@@ -41,7 +41,6 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     void teleport()
     {
         transform.position = pos;
-        //rb.MovePosition(pos);
         anim.SetTrigger("Teleport");
         timeUntilTeleport = teleportCooldown;
     }
