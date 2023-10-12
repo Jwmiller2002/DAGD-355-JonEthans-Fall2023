@@ -37,6 +37,7 @@ public class EnemyController_NotEthan : MonoBehaviour
         if (bleedTime <= 0)
         {
             enemyHealth -= bleedDamage * bleedStacks;
+            bleedTime = 30;
         }
     }
 
