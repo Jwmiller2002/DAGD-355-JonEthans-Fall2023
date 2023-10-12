@@ -10,7 +10,6 @@ public class PlayerAttack_NotEthan : MonoBehaviour
 
     [SerializeField] private float meleeSpeed;
 
-    public float damage;
 
     float timeUntiMelee = .1f;
 

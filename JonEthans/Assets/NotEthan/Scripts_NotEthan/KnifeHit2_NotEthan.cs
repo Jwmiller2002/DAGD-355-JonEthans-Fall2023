@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class KnifeHit2_NotEthan : MonoBehaviour
 {
+    public float damage = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,9 @@ public class KnifeHit2_NotEthan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        Debug.Log("Hit");
         if (other.tag == "Enemy")
         {
-            
-            Debug.Log("ENEMY HIT");
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
         }
     }
 }

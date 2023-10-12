@@ -7,6 +7,8 @@ public class ThrowKnifeController_NotEthan : MonoBehaviour
     public float knifeSpeed;
     public Rigidbody2D rb;
     public float lifespan;
+    public float damage = 5;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,5 +23,15 @@ public class ThrowKnifeController_NotEthan : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        
     }
 }
