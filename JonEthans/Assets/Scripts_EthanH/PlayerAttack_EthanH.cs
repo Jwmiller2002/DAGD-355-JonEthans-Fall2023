@@ -31,7 +31,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
             }
             else if (Input.GetMouseButtonDown(1) && level >= 4)
             {
-                anim.SetTrigger("RAttack");
+                anim.SetTrigger("HAttack");
                 attackRate = 1;
             }
             else if (Input.GetKeyDown(KeyCode.E) && level >= 3)
@@ -65,13 +65,20 @@ public class PlayerAttack_EthanH : MonoBehaviour
         }
         if (other.tag == "Bullet")
         {
-            if(level >= 8)
+            if(level >= 10)
+            {
+
+            }
+            else if(level >= 8)
             {
                 
             }
             else if(level >= 1)
             {
-                other.GetComponent<BulletMovement_EthanH>().Deflect(transform.up);
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
             }
             else
             {

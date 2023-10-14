@@ -9,6 +9,7 @@ public class Enemies_EthanH : MonoBehaviour
     public GameObject player;
     public Transform bulletPos;
     private float distance;
+    public bool knockedBack = false;
     public float fireRate;
     public int health = 10;
     public float speed;
@@ -27,9 +28,12 @@ public class Enemies_EthanH : MonoBehaviour
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
-
+        if(knockedBack == false)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        }
+        
         if(fireRate <= 0f)
         {
             if (distance > 5)
@@ -54,6 +58,11 @@ public class Enemies_EthanH : MonoBehaviour
     {
         health -= damage;
         Debug.Log("ouch");
+    }
+
+    public void knockback()
+    {
+
     }
 
     private void Fire()

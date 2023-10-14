@@ -148,6 +148,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6794420892355572686, guid: 4aebf16d9e401c94ab2c6b9275f5a43e, type: 3}
   player: {fileID: 0}
   bulletPos: {fileID: 1982893158987014544}
+  knockedBack: 0
   fireRate: 2
   health: 10
   speed: 2
@@ -188,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1982893158987014544}
   m_Layer: 6
-  m_Name: BulletPosition
+  m_Name: BulletPosition(Enemy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -38,6 +38,18 @@ public class BulletMovement_EthanH : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerMovement_EthanH>().health-=5;
+            collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
+            Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemies_EthanH>().health -= 5;
+            Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
     }
 }

@@ -163,4 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 10
   lifeTime: 5
-  returnSpeed: 10
+  returnSpeed: 1
