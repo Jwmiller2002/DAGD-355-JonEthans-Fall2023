@@ -51,13 +51,14 @@ public class Enemies_EthanH : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            player.GetComponent<PlayerAttack_EthanH>().xp += 8;
+            Debug.Log(player.GetComponent<PlayerAttack_EthanH>().xp);
         }
     }
 
     public void takeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("ouch");
     }
 
     public void knockback()

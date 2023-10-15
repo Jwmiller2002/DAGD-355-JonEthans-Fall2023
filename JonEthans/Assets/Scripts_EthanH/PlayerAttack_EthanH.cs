@@ -11,7 +11,9 @@ public class PlayerAttack_EthanH : MonoBehaviour
     [SerializeField] private float attackSpeed;
     [SerializeField] private int damage;
     private float attackRate;
+    private float ultimateCD;
     public int level = 0;
+    public int xp;
 
     // Update is called once per frame
     void Update()
@@ -34,16 +36,28 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 anim.SetTrigger("HAttack");
                 attackRate = 1;
             }
-            else if (Input.GetKeyDown(KeyCode.E) && level >= 3)
+            else if (Input.GetKeyDown(KeyCode.E) && ultimateCD <= 0f)
             {
-                anim.SetTrigger("Ultimate");
-                attackRate = 11;
+                if(level >= 6)
+                {
+                    anim.SetTrigger("Ultimate");
+                    attackRate = 11;
+                    ultimateCD = 20f;
+                }
+                else if(level >= 3)
+                {
+                    anim.SetTrigger("Ultimate");
+                    attackRate = 11;
+                    ultimateCD = 30f;
+                }
             }
         }
         else
         {
             attackRate -= Time.deltaTime;
         }
+
+        ultimateCD -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
