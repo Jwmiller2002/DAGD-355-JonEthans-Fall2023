@@ -39,6 +39,7 @@ public class EnemyController_NotEthan : MonoBehaviour
             enemyHealth -= bleedDamage * bleedStacks;
             bleedTime = 10;
         }
+        Debug.Log("BLEEDING");
     }
 
     public void TakeDamage(float damage) 

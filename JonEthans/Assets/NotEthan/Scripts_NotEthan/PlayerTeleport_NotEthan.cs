@@ -46,16 +46,4 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
         timeUntilTeleport = teleportCooldown;
 
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (GetComponent<PlayerLevel_NotEthan>().level >= 2)
-        {
-          var hitColliders =  Physics2D.OverlapCircleAll(transform.position, bleedRange);
-            foreach (var hitCollider in hitColliders)
-            { 
-            
-            }
-        }
-    }
 }

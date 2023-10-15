@@ -5,6 +5,8 @@ using static UnityEditor.PlayerSettings;
 
 public class PlayerMovement_NotEthan : MonoBehaviour
 {
+
+    public ParticleSystem dust;
     public float playerSpeed = 30f;
     private Rigidbody2D rb;
     public Animator anim;
@@ -42,6 +44,11 @@ public class PlayerMovement_NotEthan : MonoBehaviour
             transform.position += new Vector3(horizontalInput, verticalInput, 0f) * playerSpeed * Time.deltaTime;
             anim.SetFloat("V_Speed", Mathf.Abs(verticalInput));
             anim.SetFloat("H_Speed", Mathf.Abs(horizontalInput));
+            if (horizontalInput != 0 || verticalInput != 0)
+            { 
+            createDust();
+                Debug.Log("RUNING");
+            }
         }
 
             if (horizontalInput > 0 && facingRight == false)
@@ -55,6 +62,11 @@ public class PlayerMovement_NotEthan : MonoBehaviour
                 gameObject.transform.localScale = new Vector3(-1, 1, 1);
             }
         
+    }
+
+    void createDust()
+    {
+        dust.Play();
     }
 
 
