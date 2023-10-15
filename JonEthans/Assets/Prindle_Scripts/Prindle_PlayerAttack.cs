@@ -14,7 +14,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     public float ultiTimer =0f;
     public float tacttTimer =0f;
     public GameObject scoreText;
-    public Score score;
+    private Score score;
     AudioSource aud;
     public AudioClip hit, tact, ult;
 
@@ -36,7 +36,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
                 timeUntilMelee = level.weaponSpeed;
                 print(timeUntilMelee);
                 aud.clip = hit;
-                aud.Play();
+                
             }
         }
         else

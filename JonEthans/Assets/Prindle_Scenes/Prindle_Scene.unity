@@ -10310,6 +10310,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10405,6 +10406,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damping: 0.5
   target: {fileID: 1272604641}
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba549f3a9cbb0ee46a72dc9403a7ab98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &711139427
 GameObject:
   m_ObjectHideFlags: 0
@@ -10962,7 +10975,6 @@ MonoBehaviour:
   ultiTimer: 0
   tacttTimer: 0
   scoreText: {fileID: 996803281}
-  score: {fileID: 0}
   hit: {fileID: 8300000, guid: 82b7fdb6006f85040aa5d90af33af444, type: 3}
   tact: {fileID: 8300000, guid: 31fac08d9dcd0334f874b1ce2c01b370, type: 3}
   ult: {fileID: 8300000, guid: 450cc8575b0354347b2e2c6effe9eb3c, type: 3}
@@ -11071,7 +11083,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 82b7fdb6006f85040aa5d90af33af444, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11238,7 +11250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1288288292}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 519420034}
+        m_TargetAssemblyTypeName: gameReset, Assembly-CSharp
+        m_MethodName: ResetTheGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1288288292
 MonoBehaviour:
   m_ObjectHideFlags: 0
