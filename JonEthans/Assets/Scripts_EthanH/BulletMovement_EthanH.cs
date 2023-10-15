@@ -6,6 +6,7 @@ public class BulletMovement_EthanH : MonoBehaviour
 {
 
     private GameObject player;
+    public bool enemyCollision = false;
     public float force = 500.0f;
     public float lifeTime = 10.0f;
     public float returnSpeed;
@@ -17,6 +18,7 @@ public class BulletMovement_EthanH : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        //Level 8 idea if bool firedFromEnemy = true use code below else fire towards mouse
         Vector3 direction = player.transform.position - transform.position;
         rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
     }
@@ -38,6 +40,18 @@ public class BulletMovement_EthanH : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
+            collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
+            Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy" && enemyCollision == true)
+        {
+            collision.gameObject.GetComponent<Golem_EthanH>().health -= 5;
+            Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
     }
 }
