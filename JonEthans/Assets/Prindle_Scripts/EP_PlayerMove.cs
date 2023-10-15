@@ -15,9 +15,14 @@ public class EP_PlayerMove : MonoBehaviour
     public GameObject player;
     public GameObject weapon;
     private Boolean isDead =false;
-    
-    
+    public GameObject endScreen;
+
     // Update is called once per frame
+    private void Start()
+    {
+        endScreen.SetActive(false);
+       
+    }
     void Update()
     {
        
@@ -30,13 +35,16 @@ public class EP_PlayerMove : MonoBehaviour
         //float hammerAngle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg + 222f;
         if (isDead == false)
         {
-            transform.localRotation = Quaternion.Euler(0, 0, angle);
+            //transform.localRotation = Quaternion.Euler(0, 0, angle);
             //weapon.transform.localRotation = Quaternion.Euler(0, 0, hammerAngle);
             oldpos = transform.position;
+            
             transform.position += new Vector3(h, v, 0f) * speed * Time.deltaTime;
         }
         else
         {
+            
+            endScreen.SetActive(true);
             print("GAME OVER");
         }
         if(oldpos != transform.position)

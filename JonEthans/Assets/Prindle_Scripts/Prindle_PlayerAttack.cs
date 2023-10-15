@@ -13,7 +13,8 @@ public class Prindle_PlayerAttack : MonoBehaviour
     float timeUntilMelee =0f;
     public float ultiTimer =0f;
     public float tacttTimer =0f;
-    
+    public GameObject scoreText;
+    public Score score;
     AudioSource aud;
     public AudioClip hit, tact, ult;
 
@@ -21,6 +22,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     {
         aud = GetComponent<AudioSource>();
         level = player.GetComponent<Prindle_PlayerLevel>();
+        score = scoreText.GetComponent<Score>();
     }
     private void Update()
     {
@@ -79,6 +81,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         {
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             level.xpNeeded -= 35;
+            score.playerscore += 35;
             Debug.Log("Enemy Hit");
             aud.Play();
         }
