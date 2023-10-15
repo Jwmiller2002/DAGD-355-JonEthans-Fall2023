@@ -14,8 +14,12 @@ public class Prindle_PlayerAttack : MonoBehaviour
     public float ultiTimer =0f;
     public float tacttTimer =0f;
     
+    AudioSource aud;
+    public AudioClip hit, tact, ult;
+
     private void Start()
     {
+        aud = GetComponent<AudioSource>();
         level = player.GetComponent<Prindle_PlayerLevel>();
     }
     private void Update()
@@ -25,9 +29,12 @@ public class Prindle_PlayerAttack : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                
                 anim.SetTrigger("Attack");
                 timeUntilMelee = level.weaponSpeed;
                 print(timeUntilMelee);
+                aud.clip = hit;
+                aud.Play();
             }
         }
         else
@@ -38,9 +45,11 @@ public class Prindle_PlayerAttack : MonoBehaviour
         {
             if(Input.GetMouseButtonDown(1) && level.canTact == true)
             {
-
+                
                 anim.SetTrigger("tact");
                 tacttTimer = level.tactTimer;
+                aud.clip = tact;
+                aud.Play();
             }
         }
         else
@@ -51,10 +60,12 @@ public class Prindle_PlayerAttack : MonoBehaviour
         {
             if(Input.GetKeyDown("e") && level.canTact == true)
             {
-
+                
                 anim.SetTrigger("ult");
                 ultiTimer = level.ultTimer;
                 print("eeee");
+                aud.clip = ult;
+                aud.Play();
             }
         }
         else
@@ -69,7 +80,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             level.xpNeeded -= 35;
             Debug.Log("Enemy Hit");
-            
+            aud.Play();
         }
     }
 }

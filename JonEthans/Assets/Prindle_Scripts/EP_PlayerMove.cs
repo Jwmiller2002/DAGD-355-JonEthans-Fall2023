@@ -16,6 +16,7 @@ public class EP_PlayerMove : MonoBehaviour
     public GameObject weapon;
     private Boolean isDead =false;
     
+    
     // Update is called once per frame
     void Update()
     {
