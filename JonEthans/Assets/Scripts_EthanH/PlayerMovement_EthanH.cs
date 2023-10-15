@@ -8,6 +8,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
 {
 
     [SerializeField] public Animator anim;
+    public AudioSource bread;
     private Rigidbody2D rb;
     public int health = 100;
     public float speed = 5f;
@@ -78,6 +79,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
         {
             GetComponent<HealthManager_EthanH>().Heal(25);
             if (health > 100) health = 100;
+            bread.Play();
             Destroy(other.gameObject);
             Debug.Log(health);
         }

@@ -11,10 +11,16 @@ public class PlayerAttack_EthanH : MonoBehaviour
     [SerializeField] private float attackSpeed;
     [SerializeField] private int damage;
     public ParticleSystem batFX;
+    public AudioSource bat;
+    public AudioSource swing;
     private float attackRate;
     private float ultimateCD;
     public int level = 0;
     public int xp;
+
+    private void Start()
+    {
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,12 +38,14 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 anim.SetTrigger("Attack");
                 damage = 5;
                 attackRate = 1;
+                swing.Play();
             }
             else if (Input.GetMouseButtonDown(1) && level >= 4)
             {
                 anim.SetTrigger("HAttack");
                 damage = 7;
                 attackRate = 1;
+                swing.Play();
             }
             else if (Input.GetMouseButtonDown(2))
             {
@@ -92,6 +100,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
             {
                 other.GetComponent<Golem_EthanH>().takeDamage(damage);
             }
+            bat.Play();
         }
         if (other.tag == "Bullet")
         {
@@ -101,6 +110,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
+                other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
             else if(level >= 8)
             {
@@ -108,6 +118,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
+                other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
             else if(level >= 1)
             {
@@ -115,6 +126,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
+                other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
                 batFX.Play();
             }
             else
@@ -122,7 +134,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 Destroy(other.gameObject);
                 batFX.Play();
             }
-            
+            bat.Play();
         }
         if(other.tag == "Rocket")
         {
@@ -134,6 +146,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
             { 
                 Destroy(other.gameObject); 
             }
+            bat.Play();
         }
     }
 }

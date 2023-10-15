@@ -5,6 +5,7 @@ using UnityEngine;
 public class Golem_EthanH : MonoBehaviour
 {
 
+    [SerializeField] private Animator anim;
     public GameObject bulletPrefab;
     public GameObject player;
     public GameObject trail;
@@ -35,7 +36,7 @@ public class Golem_EthanH : MonoBehaviour
             rb.velocity = Vector2.zero;
             trail.GetComponent<TrailRenderer>().enabled = false;
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+            //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
 
             if (fireRate <= 0f)
             {
