@@ -32,12 +32,12 @@ public class EnemyController_NotEthan : MonoBehaviour
     public void Bleed()
     {
         float bleedDamage = 1;
-        float bleedTime = 30;
+        float bleedTime = 10;
         bleedTime -= Time.deltaTime;
         if (bleedTime <= 0)
         {
             enemyHealth -= bleedDamage * bleedStacks;
-            bleedTime = 30;
+            bleedTime = 10;
         }
     }
 
