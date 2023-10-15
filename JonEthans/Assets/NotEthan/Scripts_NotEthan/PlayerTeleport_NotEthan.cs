@@ -8,6 +8,7 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     public float teleportCooldown;
     float timeUntilTeleport;
     public float bleedRange = 0.5f;
+    public AudioSource jump;
 
     Vector3 mousePos;
     Vector2 pos = new Vector2(0f, 0f);
@@ -44,6 +45,7 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
         transform.position = pos;
         anim.SetTrigger("Teleport");
         timeUntilTeleport = teleportCooldown;
+        jump.Play();
 
     }
 }
