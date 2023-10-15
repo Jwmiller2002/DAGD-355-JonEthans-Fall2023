@@ -46,8 +46,7 @@ public class PlayerMovement_NotEthan : MonoBehaviour
             anim.SetFloat("H_Speed", Mathf.Abs(horizontalInput));
             if (horizontalInput != 0 || verticalInput != 0)
             { 
-            createDust();
-                Debug.Log("RUNING");
+            createDust();             
             }
         }
 

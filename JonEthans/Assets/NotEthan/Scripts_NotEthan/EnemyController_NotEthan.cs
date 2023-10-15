@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class EnemyController_NotEthan : MonoBehaviour
 {
+    public ParticleSystem bleedEffect;
     public float bleedStacks = 0;
     public float enemyHealth = 2;
     // Start is called before the first frame update
@@ -39,6 +40,7 @@ public class EnemyController_NotEthan : MonoBehaviour
             enemyHealth -= bleedDamage * bleedStacks;
             bleedTime = 10;
         }
+        bleedEffect.Play();
         Debug.Log("BLEEDING");
     }
 
@@ -46,4 +48,5 @@ public class EnemyController_NotEthan : MonoBehaviour
     {
         enemyHealth -= damage;
     }
+
 }
