@@ -7,6 +7,7 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     private Rigidbody2D rb;
     public float teleportCooldown;
     float timeUntilTeleport;
+    public float bleedRange = 0.5f;
 
     Vector3 mousePos;
     Vector2 pos = new Vector2(0f, 0f);
@@ -43,5 +44,18 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
         transform.position = pos;
         anim.SetTrigger("Teleport");
         timeUntilTeleport = teleportCooldown;
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (GetComponent<PlayerLevel_NotEthan>().level >= 2)
+        {
+          var hitColliders =  Physics2D.OverlapCircleAll(transform.position, bleedRange);
+            foreach (var hitCollider in hitColliders)
+            { 
+            
+            }
+        }
     }
 }
