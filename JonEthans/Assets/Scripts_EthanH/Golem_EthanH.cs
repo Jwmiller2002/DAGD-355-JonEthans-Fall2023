@@ -58,7 +58,7 @@ public class Golem_EthanH : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
-            player.GetComponent<PlayerAttack_EthanH>().xp += 8;
+            player.GetComponent<XPManager_EthanH>().GainXP(8f);
             Debug.Log(player.GetComponent<PlayerAttack_EthanH>().xp);
         }
     }

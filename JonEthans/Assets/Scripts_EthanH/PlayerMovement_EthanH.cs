@@ -64,16 +64,28 @@ public class PlayerMovement_EthanH : MonoBehaviour
             anim.SetTrigger("Dead");
         }
 
+        if (Input.GetKeyDown("space"))
+        {
+            GetComponent<KnifeManager>().knifeAmount++;
+            if (GetComponent<KnifeManager>().knifeAmount > 3) GetComponent<KnifeManager>().knifeAmount = 3;
+            Debug.Log(GetComponent<KnifeManager>().knifeAmount);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.tag == "Baguette")
+        if (other.tag == "Baguette")
         {
-            health += 25;
+            GetComponent<HealthManager_EthanH>().Heal(25);
             if (health > 100) health = 100;
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Debug.Log(health);
+        }
+        if (other.tag == "Knife")
+        {
+            GetComponent<KnifeManager>().knifeAmount++;
+            if (GetComponent<KnifeManager>().knifeAmount > 3) GetComponent<KnifeManager>().knifeAmount = 3;
+            Destroy(other.gameObject);
         }
     }
 }

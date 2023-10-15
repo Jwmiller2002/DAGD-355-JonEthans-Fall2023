@@ -39,6 +39,15 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 damage = 7;
                 attackRate = 1;
             }
+            else if (Input.GetMouseButtonDown(2))
+            {
+                anim.SetTrigger("RAttack");
+                GetComponent<KnifeManager>().knifeAmount--;
+                if (GetComponent<KnifeManager>().knifeAmount <= 0) GetComponent<KnifeManager>().knifeAmount = 0;
+                Debug.Log(GetComponent<KnifeManager>().knifeAmount);
+                damage = 7;
+                attackRate = 1;
+            }
             else if (Input.GetKeyDown(KeyCode.E) && ultimateCD <= 0f)
             {
                 if(level >= 6)
