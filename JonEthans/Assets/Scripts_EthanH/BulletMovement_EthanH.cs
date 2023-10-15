@@ -47,7 +47,7 @@ public class BulletMovement_EthanH : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemies_EthanH>().health -= 5;
+            collision.gameObject.GetComponent<Golem_EthanH>().health -= 5;
             Debug.Log("Oof");
             Destroy(this.gameObject);
         }

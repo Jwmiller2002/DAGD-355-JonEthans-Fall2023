@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement_EthanH : MonoBehaviour
 {
-    
+
     [SerializeField] public Animator anim;
     private Rigidbody2D rb;
-    public int health = 10;
+    public int health = 100;
     public float speed = 5f;
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health > 0)
+        if (health > 0)
         {
             Vector3 pos = transform.position;
 
@@ -62,6 +63,17 @@ public class PlayerMovement_EthanH : MonoBehaviour
         {
             anim.SetTrigger("Dead");
         }
-        
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Baguette")
+        {
+            health += 25;
+            if (health > 100) health = 100;
+            Destroy(collision.gameObject);
+            Debug.Log(health);
+        }
     }
 }

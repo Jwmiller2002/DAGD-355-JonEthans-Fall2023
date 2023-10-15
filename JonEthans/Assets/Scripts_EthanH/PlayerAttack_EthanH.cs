@@ -10,6 +10,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private float attackSpeed;
     [SerializeField] private int damage;
+    public ParticleSystem batFX;
     private float attackRate;
     private float ultimateCD;
     public int level = 0;
@@ -29,11 +30,13 @@ public class PlayerAttack_EthanH : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 anim.SetTrigger("Attack");
+                damage = 5;
                 attackRate = 1;
             }
             else if (Input.GetMouseButtonDown(1) && level >= 4)
             {
                 anim.SetTrigger("HAttack");
+                damage = 7;
                 attackRate = 1;
             }
             else if (Input.GetKeyDown(KeyCode.E) && ultimateCD <= 0f)
@@ -57,7 +60,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
             attackRate -= Time.deltaTime;
         }
 
-        ultimateCD -= Time.deltaTime;
+        //ultimateCD -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -66,26 +69,36 @@ public class PlayerAttack_EthanH : MonoBehaviour
         {
             if(level >= 7)
             {
-
+                other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
+                other.GetComponent<Golem_EthanH>().knockback(1f);
+                other.GetComponent<Golem_EthanH>().takeDamage(damage);
             }
             else if(level >= 2)
             {
-
+                other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
+                other.GetComponent<Golem_EthanH>().knockback(0.5f);
+                other.GetComponent<Golem_EthanH>().takeDamage(damage);
             }
             else
             {
-                other.GetComponent<Enemies_EthanH>().takeDamage(damage);
+                other.GetComponent<Golem_EthanH>().takeDamage(damage);
             }
         }
         if (other.tag == "Bullet")
         {
             if(level >= 10)
             {
-
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
             }
             else if(level >= 8)
             {
-                
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
             }
             else if(level >= 1)
             {
@@ -93,10 +106,12 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
+                batFX.Play();
             }
             else
             {
                 Destroy(other.gameObject);
+                batFX.Play();
             }
             
         }
