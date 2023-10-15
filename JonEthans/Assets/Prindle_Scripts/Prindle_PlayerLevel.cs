@@ -81,7 +81,9 @@ public class Prindle_PlayerLevel : MonoBehaviour
             case 10:
                 ultTimer = 6;
                 tactTimer = 3;
-                
+                canUlt = true;
+                canTact = true;
+
                 weaponSpeed = 0.5f;
                 print("MAX");
                 break;
