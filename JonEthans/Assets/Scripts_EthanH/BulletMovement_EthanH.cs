@@ -50,6 +50,7 @@ public class BulletMovement_EthanH : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" && enemyCollision == true)
         {
             collision.gameObject.GetComponent<Golem_EthanH>().health -= 5;
+            collision.gameObject.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             Debug.Log("Oof");
             Destroy(this.gameObject);
         }
