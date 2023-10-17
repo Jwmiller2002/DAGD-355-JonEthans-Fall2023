@@ -85,7 +85,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 canTact = true;
 
                 weaponSpeed = 0.5f;
-                print("MAX");
+                //print("MAX");
                 break;
         }
     }

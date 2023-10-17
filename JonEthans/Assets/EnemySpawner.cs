@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
         if(basicSpawnTimer <= 0)
         {
             basicSpawnTimer = basicSpawnTimerMax;
-            print("SPAWNED");
+            //print("SPAWNED");
             Vector3 spawnlocation = spawner.transform.position;
             Quaternion spawnRotation = spawner.transform.rotation;
             Instantiate(basicEnemy,spawnlocation,spawnRotation);
@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         else
         {
             basicSpawnTimer -= Time.deltaTime;
-            print(basicSpawnTimer);
+            //print(basicSpawnTimer);
         }
     }
 }

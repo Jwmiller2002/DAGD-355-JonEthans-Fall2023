@@ -31,7 +31,7 @@ public class Prindle_Enemy : MonoBehaviour
     {
         if (stunned)
         {
-            timeToFire += 1;
+            timeToFire += 5;
             stunned = false;
         }
         if (slowed)
@@ -105,17 +105,18 @@ public class Prindle_Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
-        {
+        
             if (other.tag == "Ultimate")
             {
                 slowed = true;
                 stunned = true;
+            print("ulthit");
             }
             if (other.tag == "Tacticle")
             {
                 stunned = true;
-            }
+            print("tathit");
         }
+        
     }
 }

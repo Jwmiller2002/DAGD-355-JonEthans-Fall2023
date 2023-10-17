@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 491360347}
   m_Layer: 0
   m_Name: ULTTIMATE BIDEN BLAST
-  m_TagString: Untagged
+  m_TagString: Ultimate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5477,7 +5477,7 @@ GameObject:
   - component: {fileID: 511622931}
   m_Layer: 0
   m_Name: Tacticle blast
-  m_TagString: Untagged
+  m_TagString: Tacticle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10446,6 +10446,7 @@ Transform:
   - {fileID: 176487168}
   - {fileID: 843815603}
   - {fileID: 1842700969}
+  - {fileID: 1272604641}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -11064,8 +11065,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272604639}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.05000019, y: 0.08, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11073,7 +11074,7 @@ Transform:
   - {fileID: 1442055243}
   - {fileID: 892344657}
   - {fileID: 1794582430}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1272604642
 MonoBehaviour:
@@ -12545,7 +12546,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1272604641}
   - {fileID: 981426526}
   - {fileID: 1053057759}
   - {fileID: 2041941756}

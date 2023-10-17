@@ -102,9 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   target: {fileID: 0}
-  speed: 11
+  speed: 7
   rotateSpeed: 1
-  fireRate: 1
+  fireRate: 3
   distanceToShoot: 6
   distanceToStop: 4
   firingPoint: {fileID: 6123529363973401409}
