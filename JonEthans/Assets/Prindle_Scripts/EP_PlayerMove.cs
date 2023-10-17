@@ -47,9 +47,13 @@ public class EP_PlayerMove : MonoBehaviour
             endScreen.SetActive(true);
             print("GAME OVER");
         }
-        if(oldpos != transform.position)
+        if (oldpos != transform.position)
         {
             anim.SetBool("runing", true);
+        }
+        else
+        {
+            anim.SetBool("runing", false);
         }
         if(mousePos.x < player.transform.localPosition.x)
         {
