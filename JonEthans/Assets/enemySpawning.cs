@@ -10,7 +10,7 @@ public class enemySpawning : MonoBehaviour
     public GameObject spawner;
     [SerializeField] private float basicSpawnTimerMax;
     //[SerializeField] private float otherSpawnTimerMax;
-    private float basicSpawnTimer = 0f;
+    private float basicSpawnTimer = 2f;
     //private float otherSpawnTimer = 0;
     [SerializeField] private int waveNum = 1;
     [SerializeField] private float MaxEnemies;
@@ -22,6 +22,7 @@ public class enemySpawning : MonoBehaviour
     {
         if (basicSpawnTimer <= 0 && numBasicEnemies <MaxEnemies)
         {
+            basicSpawnTimerMax = Random.Range(3, 8);
             basicSpawnTimer = basicSpawnTimerMax;
             //print("SPAWNED");
             Vector3 spawnlocation = spawner.transform.position;

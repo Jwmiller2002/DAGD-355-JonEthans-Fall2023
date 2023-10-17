@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08005c3db499ca24089863a425ab1a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemy: {fileID: 0}
+  basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   otherEnemy: {fileID: 0}
   spawner: {fileID: 68659656}
   basicSpawnTimerMax: 5
@@ -10549,7 +10549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08005c3db499ca24089863a425ab1a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemy: {fileID: 0}
+  basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   otherEnemy: {fileID: 0}
   spawner: {fileID: 833475973}
   basicSpawnTimerMax: 5
@@ -10950,7 +10950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1272604644}
-  speed: 2
+  speed: 4
   playerhurtdamage: 5
   health: 20
   player: {fileID: 1272604639}
@@ -10991,7 +10991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1272604644}
   meleeSpeeed: 4
-  damage: 25
+  damage: 10
   level: {fileID: 0}
   player: {fileID: 1272604639}
   ultiTimer: 0
@@ -11039,7 +11039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d62f59d1898434b8e6c9f7f086c196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 10
+  level: 1
   xpNeeded: 35
   xpmax: 35
   weaponSpeed: 4
@@ -11533,7 +11533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08005c3db499ca24089863a425ab1a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemy: {fileID: 0}
+  basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   otherEnemy: {fileID: 0}
   spawner: {fileID: 1737741585}
   basicSpawnTimerMax: 5
@@ -11750,7 +11750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08005c3db499ca24089863a425ab1a0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicEnemy: {fileID: 0}
+  basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   otherEnemy: {fileID: 0}
   spawner: {fileID: 2127044888}
   basicSpawnTimerMax: 5
