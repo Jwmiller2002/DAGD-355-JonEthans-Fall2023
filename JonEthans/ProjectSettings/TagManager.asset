@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Ultimate
   - Tacticle
+  - Spawner
   layers:
   - Default
   - TransparentFX
