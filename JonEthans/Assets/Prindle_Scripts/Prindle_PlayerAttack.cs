@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Animator anim;
     [SerializeField] private float meleeSpeeed;
-    [SerializeField] private float damage =25;
+    [SerializeField] private float damage =10;
     public Prindle_PlayerLevel level;
     public GameObject player;
     float timeUntilMelee =0f;
@@ -18,6 +19,12 @@ public class Prindle_PlayerAttack : MonoBehaviour
     AudioSource aud;
     public AudioClip hit, tact, ult;
 
+
+    Boolean attackPowerUp = false;
+    Boolean gotAttackPowerup = false;
+    float attackPowerUpDuration = 10;
+
+
     private void Start()
     {
         aud = GetComponent<AudioSource>();
@@ -26,6 +33,25 @@ public class Prindle_PlayerAttack : MonoBehaviour
     }
     private void Update()
     {
+        if (attackPowerUp)
+        {
+            if(gotAttackPowerup == false)
+            {
+                damage += 5;
+                gotAttackPowerup = true;
+            }
+            if(attackPowerUpDuration <= 0)
+            {
+                damage -= 5;
+                attackPowerUp =false;
+                attackPowerUpDuration = 10;
+                gotAttackPowerup = false;
+            }
+            else
+            {
+                attackPowerUpDuration -= Time.deltaTime;
+            }
+        }
         
         if (timeUntilMelee <= 0f)
         {
@@ -84,6 +110,12 @@ public class Prindle_PlayerAttack : MonoBehaviour
             score.playerscore += 35;
             Debug.Log("Enemy Hit");
             aud.Play();
+        }
+        if(other.tag == "attackpowerup")
+        {
+            attackPowerUp = true;
+            Destroy(other.gameObject);
+            print("powered");
         }
     }
 }
