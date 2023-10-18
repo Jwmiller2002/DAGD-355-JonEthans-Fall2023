@@ -9,6 +9,7 @@ public class EnemyController_NotEthan : MonoBehaviour
     public ParticleSystem bleedEffect;
     public float bleedStacks = 0;
     public float enemyHealth = 2;
+    float bleedTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,17 +34,14 @@ public class EnemyController_NotEthan : MonoBehaviour
 
     public void Bleed()
     {
-        float bleedDamage = 1;
-        float bleedTime = 10;
+        float bleedDamage = 1;        
         bleedTime -= Time.deltaTime;
         if (bleedTime <= 0)
         {
             enemyHealth -= bleedDamage * bleedStacks;
             bleedTime = 10;
-            Debug.Log("BLEED DAMAGE");
         }
         bleedEffect.Play();
-        Debug.Log("BLEDDING");
         
     }
 
