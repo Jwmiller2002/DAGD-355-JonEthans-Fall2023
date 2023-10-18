@@ -166,3 +166,4 @@ MonoBehaviour:
   force: 10
   lifeTime: 5
   returnSpeed: 1
+  rb: {fileID: 7140041783057357353}

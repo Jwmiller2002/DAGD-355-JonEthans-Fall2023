@@ -115,10 +115,21 @@ public class PlayerAttack_EthanH : MonoBehaviour
         {
             if(level >= 10)
             {
-                Vector3 mousePosition = Input.mousePosition;
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-                other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
+                Vector3 pos = transform.position;
+                float dist = float.PositiveInfinity;
+                ChaseableEntity_EthanH targ = null;
+                foreach (var obj in ChaseableEntity_EthanH.Entities)
+                {
+                    var d = (pos - obj.transform.position).sqrMagnitude;
+                    if (d < dist)
+                    {
+                        targ = obj;
+                        dist = d;
+                    }
+                }
+
+                Vector3 direction = targ.transform.position - transform.position;
+                other.GetComponent<BulletMovement_EthanH>().rb.velocity = new Vector2(direction.x, direction.y).normalized * other.GetComponent<BulletMovement_EthanH>().force;
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
             else if(level >= 8)

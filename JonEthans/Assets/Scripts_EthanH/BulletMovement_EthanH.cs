@@ -12,7 +12,7 @@ public class BulletMovement_EthanH : MonoBehaviour
     public float lifeTime = 10.0f;
     public float returnSpeed;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     private void Awake()
