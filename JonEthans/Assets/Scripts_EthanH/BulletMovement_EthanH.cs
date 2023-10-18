@@ -6,6 +6,7 @@ public class BulletMovement_EthanH : MonoBehaviour
 {
 
     private GameObject player;
+    public bool firedFromEnemy;
     public bool enemyCollision = false;
     public float force = 500.0f;
     public float lifeTime = 10.0f;

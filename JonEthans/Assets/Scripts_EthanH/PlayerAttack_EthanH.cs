@@ -58,7 +58,13 @@ public class PlayerAttack_EthanH : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E) && ultimateCD <= 0f)
             {
-                if(level >= 6)
+                if(level >= 9)
+                {
+                    anim.SetTrigger("Ultimate8");
+                    attackRate = 11;
+                    ultimateCD = 20f;
+                }
+                else if(level >= 6)
                 {
                     anim.SetTrigger("Ultimate");
                     attackRate = 11;

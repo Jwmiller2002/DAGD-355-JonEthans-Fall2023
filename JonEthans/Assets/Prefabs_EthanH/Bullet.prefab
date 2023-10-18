@@ -161,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d57b140d941ed254a9e5575e23efc556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firedFromEnemy: 0
   enemyCollision: 0
   force: 10
   lifeTime: 5
