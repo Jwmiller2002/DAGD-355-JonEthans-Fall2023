@@ -11,7 +11,8 @@ public class PlayerAttack_NotEthan : MonoBehaviour
     [SerializeField] private float meleeSpeed;
 
     public AudioSource stab;
-    float timeUntiMelee = .1f;
+
+    float timeUntiMelee = .05f;
 
     
 
@@ -30,7 +31,7 @@ public class PlayerAttack_NotEthan : MonoBehaviour
             {
                 anim.SetTrigger("Attack");
                 timeUntiMelee = meleeSpeed;
-                stab.Play();
+                stab.Play();                      
             }
         }
         else

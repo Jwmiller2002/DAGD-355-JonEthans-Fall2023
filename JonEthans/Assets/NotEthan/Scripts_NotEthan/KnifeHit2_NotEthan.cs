@@ -5,6 +5,7 @@ using UnityEngine;
 public class KnifeHit2_NotEthan : MonoBehaviour
 {
     public float damage = 1;
+    public PlayerUltimate_NotEthan ultRef;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,12 @@ public class KnifeHit2_NotEthan : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage*ultRef.damageMultiplier);
+            if (ultRef.isInvisible == true)
+            {
+                other.GetComponent<EnemyController_NotEthan>().bleedStacks++;
+                ultRef.isInvisible = false;
+            }
         }
     }
 }

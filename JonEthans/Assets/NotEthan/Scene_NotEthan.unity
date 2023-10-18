@@ -290,6 +290,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6075264377077140499, guid: 2bca66af42f200749be0c7c371b7c4f3, type: 3}
+      propertyPath: looping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075264377077140499, guid: 2bca66af42f200749be0c7c371b7c4f3, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6075264377077140499, guid: 2bca66af42f200749be0c7c371b7c4f3, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5471,6 +5483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  ultRef: {fileID: 1707287845}
 --- !u!1 &1174494528
 GameObject:
   m_ObjectHideFlags: 0
@@ -5517,7 +5530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportRef: {fileID: 1707287837}
-  levelRef: {fileID: 0}
+  levelRef: {fileID: 1707287842}
 --- !u!58 &1174494532
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5574,6 +5587,7 @@ GameObject:
   - component: {fileID: 1707287842}
   - component: {fileID: 1707287844}
   - component: {fileID: 1707287843}
+  - component: {fileID: 1707287845}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5808,6 +5822,7 @@ MonoBehaviour:
   Throwing_Knife: {fileID: 4313263069899179086, guid: 6a916825fb7408348af5019fca4d2c73, type: 3}
   spawnPoint: {fileID: 756934974}
   knifeAmount: 3
+  ultRef: {fileID: 1707287845}
 --- !u!114 &1707287841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5821,7 +5836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1707287836}
-  meleeSpeed: 0.5
+  meleeSpeed: 0.25
   stab: {fileID: 1707287844}
 --- !u!114 &1707287842
 MonoBehaviour:
@@ -6029,6 +6044,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1707287845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707287829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d61f7f00bdb2ce48bf33bb5acb030d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInvisible: 0
+  damageMultiplier: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

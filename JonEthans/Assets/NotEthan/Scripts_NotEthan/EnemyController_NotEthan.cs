@@ -22,6 +22,7 @@ public class EnemyController_NotEthan : MonoBehaviour
         if (bleedStacks > 0)
         {
             Bleed();
+            bleedParticle();
         }
         if (enemyHealth <= 0f)
         {
@@ -40,8 +41,9 @@ public class EnemyController_NotEthan : MonoBehaviour
         {
             enemyHealth -= bleedDamage * bleedStacks;
             bleedTime = 10;
+            bleedParticle();
         }
-        bleedEffect.Play();
+        
         
     }
 
@@ -50,4 +52,8 @@ public class EnemyController_NotEthan : MonoBehaviour
         enemyHealth -= damage;
     }
 
+    void bleedParticle()
+    {
+        bleedEffect.Play();
+    }
 }
