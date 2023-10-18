@@ -344,6 +344,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isDead
     m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: smoltact
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5171045416296849672}
   m_Solo: 0
@@ -353,6 +356,37 @@ AnimatorStateTransition:
   m_TransitionDuration: 0
   m_TransitionOffset: 0
   m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &-3582962456288268280
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: smoltact
+    m_EventTreshold: 0
+  - m_ConditionMode: 1
+    m_ConditionEvent: tact
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: isDead
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 4444077159373029073}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.99
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -465,7 +499,7 @@ AnimatorStateMachine:
     m_Position: {x: -190, y: -170, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5171045416296849672}
-    m_Position: {x: 380, y: -170, z: 0}
+    m_Position: {x: 400, y: -280, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4949778074780122677}
     m_Position: {x: -250, y: 70, z: 0}
@@ -474,7 +508,7 @@ AnimatorStateMachine:
     m_Position: {x: -85, y: 215, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2970936897336395176}
-    m_Position: {x: 360, y: -250, z: 0}
+    m_Position: {x: 380, y: -360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4771526017655708866}
     m_Position: {x: 260, y: -30, z: 0}
@@ -490,6 +524,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -915566250112936153}
     m_Position: {x: 230, y: -100, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 4444077159373029073}
+    m_Position: {x: 420, y: -200, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -5588332672592711658}
@@ -500,6 +537,7 @@ AnimatorStateMachine:
   - {fileID: 8498478871500595766}
   - {fileID: -7793935684785866919}
   - {fileID: -3171618800034666329}
+  - {fileID: -3582962456288268280}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -676,6 +714,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: smallSwing
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: smoltact
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -891,6 +935,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &4444077159373029073
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BIGTacticle
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 65b712d73cc622544a340f55cec6ef93, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &4713786945424516896
 AnimatorState:
   serializedVersion: 6

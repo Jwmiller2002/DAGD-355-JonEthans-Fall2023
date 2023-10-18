@@ -21,6 +21,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
 
     public float ultSlow;
     public float tactStun;
+    public Boolean ultBuff =false;
     // Update is called once per frame
     void Update()
     {
@@ -48,7 +49,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 canTact = true;
                 tactTimer = 8;
                 tactStun = 3;
-                //print(tactTimer);
+                
                 break;
             case 2:
                 print("level2");
@@ -62,14 +63,14 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 ultSlow = 4;
                 break;
             case 4:
-                //upgrade Heavy size
+                anim.SetBool("smoltact", false);
                 break;
             case 5:
                 tactStun = 6;
                 break;
             case 6:
+                ultBuff = true;
                 ultTimer = 8;
-                
                 break;
             case 7:
                 anim.SetBool("smallSwing", false);

@@ -19,11 +19,15 @@ public class Prindle_Enemy : MonoBehaviour
     public Transform firingPoint;
     public GameObject bulletPrefab;
 
+    public Prindle_PlayerLevel level;
+    public GameObject player;
+
     private Boolean stunned = false;
     private Boolean slowed = false;
 
     private void Start()
     {
+        level = player.GetComponent<Prindle_PlayerLevel>();
         rb = GetComponent<Rigidbody2D>();
         timeToFire = fireRate;
     }
@@ -31,12 +35,12 @@ public class Prindle_Enemy : MonoBehaviour
     {
         if (stunned)
         {
-            timeToFire += 1;
+            timeToFire += level.tactStun;
             stunned = false;
         }
         if (slowed)
         {
-            speed -= 3;
+            speed -= level.ultSlow;
             slowed = false;
         }
         if (!target)
@@ -105,12 +109,16 @@ public class Prindle_Enemy : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "player")
         {
             if (other.tag == "Ultimate")
             {
                 slowed = true;
-                stunned = true;
+                if (level.ultBuff)
+                {
+                    stunned = true;
+                }
+                
             }
             if (other.tag == "Tacticle")
             {
