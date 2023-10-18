@@ -15,13 +15,13 @@ public class enemySpawning : MonoBehaviour
     
     [SerializeField] private float MaxEnemies =1f;
     [SerializeField] private float MaxEnemiesrocketMan=2f;
-    private float numBasicEnemies =0f;
+    private float numBasicEnemies =2f;
     private float numRocketEnemies =0f;
     private float difficultyIncrease =30;
     // Update is called once per frame
     void Update()
     {
-        if (basicSpawnTimer <= 0 && numBasicEnemies <MaxEnemies)
+        if (basicSpawnTimer <= 0 && numBasicEnemies <= MaxEnemies)
         {
             basicSpawnTimerMax = Random.Range(3, 8);
             basicSpawnTimer = basicSpawnTimerMax;
@@ -29,7 +29,7 @@ public class enemySpawning : MonoBehaviour
             Vector3 spawnlocation = spawner.transform.position;
             Quaternion spawnRotation = spawner.transform.rotation;
             Instantiate(basicEnemy, spawnlocation, spawnRotation);
-            numBasicEnemies+=1;
+            numBasicEnemies+=1f;
         }
         else
         {
