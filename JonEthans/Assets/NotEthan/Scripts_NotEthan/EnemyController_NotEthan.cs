@@ -24,7 +24,7 @@ public class EnemyController_NotEthan : MonoBehaviour
         }
         if (enemyHealth <= 0f)
         {
-            GetComponent<PlayerLevel_NotEthan>().exp += 2;
+            //GetComponent<PlayerLevel_NotEthan>().exp += 2;
             Destroy(gameObject);
             
         }
@@ -43,6 +43,7 @@ public class EnemyController_NotEthan : MonoBehaviour
             Debug.Log("BLEED DAMAGE");
         }
         bleedEffect.Play();
+        Debug.Log("BLEDDING");
         
     }
 

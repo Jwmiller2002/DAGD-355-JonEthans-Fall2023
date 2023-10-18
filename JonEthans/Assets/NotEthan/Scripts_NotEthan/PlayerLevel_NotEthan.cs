@@ -23,4 +23,9 @@ public class PlayerLevel_NotEthan : MonoBehaviour
             exp = 0;
         }
     }
+
+    public void addXP(int xp)
+    {
+        exp += xp;
+    }
 }
