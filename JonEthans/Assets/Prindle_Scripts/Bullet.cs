@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public Boolean isRocket =false;
     [SerializeField] float lifeTime =3F;
     private Rigidbody2D rb;
+    //[SerializeField] private Animator anim;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,7 +22,7 @@ public class Bullet : MonoBehaviour
         {
             if(lifeTime <= 0)
             {
-                //anime.settrigger("explosion")
+                //anim.settrigger("explosion")
                 Destroy(gameObject);
             }
             else

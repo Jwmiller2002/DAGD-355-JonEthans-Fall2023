@@ -22,12 +22,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: speed
-      value: 4
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: health
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 4901857885194985412}
     - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: xpGiven
       value: 4
@@ -36,6 +40,10 @@ PrefabInstance:
       propertyPath: fireRate
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+      propertyPath: firingPoint
+      value: 
+      objectReference: {fileID: 4988346571194067013}
     - target: {fileID: 4667933137587378608, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: bulletPrefab
       value: 
@@ -96,8 +104,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8841225521718716949, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+      propertyPath: m_Name
+      value: gunn
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+--- !u!4 &4901857885194985412 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6123529363973401409, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+  m_PrefabInstance: {fileID: 1224346079473988741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4988346571194067013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6181166863255280832, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
+  m_PrefabInstance: {fileID: 1224346079473988741}
+  m_PrefabAsset: {fileID: 0}

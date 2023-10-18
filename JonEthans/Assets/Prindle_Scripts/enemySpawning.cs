@@ -6,17 +6,18 @@ public class enemySpawning : MonoBehaviour
 {
     
     public GameObject basicEnemy;
-    public GameObject otherEnemy;
+    public GameObject rocketEnemy;
     public GameObject spawner;
     [SerializeField] private float basicSpawnTimerMax;
-    //[SerializeField] private float otherSpawnTimerMax;
+    [SerializeField] private float rocketSpawnTimerMax;
     private float basicSpawnTimer = 2f;
-    //private float otherSpawnTimer = 0;
-    [SerializeField] private int waveNum = 1;
-    [SerializeField] private float MaxEnemies;
-    [SerializeField] private float MaxEnemiesOther;
-    private float numBasicEnemies;
-
+    private float rocketSpawnTimer = 0f;
+    
+    [SerializeField] private float MaxEnemies =1f;
+    [SerializeField] private float MaxEnemiesrocketMan=2f;
+    private float numBasicEnemies =0f;
+    private float numRocketEnemies =0f;
+    private float difficultyIncrease =30;
     // Update is called once per frame
     void Update()
     {
@@ -28,12 +29,38 @@ public class enemySpawning : MonoBehaviour
             Vector3 spawnlocation = spawner.transform.position;
             Quaternion spawnRotation = spawner.transform.rotation;
             Instantiate(basicEnemy, spawnlocation, spawnRotation);
-            numBasicEnemies++;
+            numBasicEnemies+=1;
         }
         else
         {
             basicSpawnTimer -= Time.deltaTime;
             //print(basicSpawnTimer);
+        }
+        if (rocketSpawnTimer < 0 && numRocketEnemies < MaxEnemiesrocketMan)
+        {
+            print("what");
+            rocketSpawnTimerMax = Random.Range(3, 8);
+            rocketSpawnTimer = rocketSpawnTimerMax;
+            //print("SPAWNED");
+            Vector3 spawnlocation = spawner.transform.position;
+            Quaternion spawnRotation = spawner.transform.rotation;
+            Instantiate(rocketEnemy, spawnlocation, spawnRotation);
+            numRocketEnemies+=1;
+            
+        }
+        else
+        {
+            rocketSpawnTimer -= Time.deltaTime;
+            print(rocketSpawnTimer);
+        }
+        if(difficultyIncrease <= 0)
+        {
+            MaxEnemies += 5;
+            MaxEnemiesrocketMan += 2;
+        }
+        else
+        {
+            difficultyIncrease -= Time.deltaTime;
         }
     }
 

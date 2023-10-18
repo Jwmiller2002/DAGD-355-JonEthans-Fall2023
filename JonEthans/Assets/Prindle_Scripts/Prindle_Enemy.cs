@@ -11,7 +11,7 @@ public class Prindle_Enemy : MonoBehaviour
     public float speed;
     public float rotateSpeed = 0.0025f;
     private Rigidbody2D rb;
-
+    [SerializeField] private Animator anim;
     public float fireRate;
     private float timeToFire;
     public float distanceToShoot = 5f;
@@ -29,6 +29,8 @@ public class Prindle_Enemy : MonoBehaviour
 
     private void Start()
     {
+        GetTarget();
+        player = GameObject.FindGameObjectWithTag("Player");
         level = player.GetComponent<Prindle_PlayerLevel>();
         rb = GetComponent<Rigidbody2D>();
         timeToFire = fireRate;
@@ -53,7 +55,9 @@ public class Prindle_Enemy : MonoBehaviour
         {
             RotateTwardsTarget();
         }
-        if(Vector2.Distance(target.position, transform.position) <= distanceToShoot)
+
+
+        if (Vector2.Distance(target.position, transform.position) <= distanceToShoot)
         {
             Shoot();
         }
@@ -74,12 +78,15 @@ public class Prindle_Enemy : MonoBehaviour
     private void FixedUpdate()
     {   if (target != null)
         {
+            GetTarget();
             if (Vector2.Distance(target.position, transform.position) >= distanceToStop)
             {
+                GetTarget();
                 rb.velocity = transform.up * speed *Time.deltaTime;
             }
             else
             {
+                GetTarget();
                 rb.velocity = Vector2.zero;
             }
         }
@@ -93,6 +100,9 @@ public class Prindle_Enemy : MonoBehaviour
     }
     private void GetTarget()
     {
+
+
+
         if (GameObject.FindGameObjectWithTag("Player"))
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;

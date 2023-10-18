@@ -298,12 +298,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
-  otherEnemy: {fileID: 0}
+  rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 68659656}
   basicSpawnTimerMax: 5
-  waveNum: 1
+  rocketSpawnTimerMax: 0
   MaxEnemies: 10
-  MaxEnemiesOther: 0
+  MaxEnemiesrocketMan: 0
 --- !u!1 &153765901
 GameObject:
   m_ObjectHideFlags: 0
@@ -10550,12 +10550,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
-  otherEnemy: {fileID: 0}
+  rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 833475973}
   basicSpawnTimerMax: 5
-  waveNum: 1
+  rocketSpawnTimerMax: 0
   MaxEnemies: 10
-  MaxEnemiesOther: 0
+  MaxEnemiesrocketMan: 0
 --- !u!1 &892344656
 GameObject:
   m_ObjectHideFlags: 0
@@ -15919,7 +15919,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1272604644}
   speed: 4
-  playerhurtdamage: 5
   health: 100
   player: {fileID: 1272604639}
   weapon: {fileID: 68337566}
@@ -16523,12 +16522,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
-  otherEnemy: {fileID: 0}
+  rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 1737741585}
   basicSpawnTimerMax: 5
-  waveNum: 1
+  rocketSpawnTimerMax: 0
   MaxEnemies: 10
-  MaxEnemiesOther: 0
+  MaxEnemiesrocketMan: 0
 --- !u!1 &1794582429
 GameObject:
   m_ObjectHideFlags: 0
@@ -16740,12 +16739,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
-  otherEnemy: {fileID: 0}
+  rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 2127044888}
   basicSpawnTimerMax: 5
-  waveNum: 1
+  rocketSpawnTimerMax: 0
   MaxEnemies: 10
-  MaxEnemiesOther: 0
+  MaxEnemiesrocketMan: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
