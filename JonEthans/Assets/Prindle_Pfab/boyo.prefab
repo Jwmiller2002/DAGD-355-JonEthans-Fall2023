@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2485523620984378045}
   - component: {fileID: 254397366848205527}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: boyo
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffb7e72d95e9cb4796b243acb8f7866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 10
   target: {fileID: 0}
   speed: 8
   rotateSpeed: 1
@@ -109,6 +109,9 @@ MonoBehaviour:
   distanceToStop: 3
   firingPoint: {fileID: 6123529363973401409}
   bulletPrefab: {fileID: 6534331897720283174, guid: 836ba52e6b4855348a5b9b1d5f78f923, type: 3}
+  level: {fileID: 0}
+  player: {fileID: 0}
+  xpGiven: 2
 --- !u!58 &2485523620984378045
 CircleCollider2D:
   m_ObjectHideFlags: 0

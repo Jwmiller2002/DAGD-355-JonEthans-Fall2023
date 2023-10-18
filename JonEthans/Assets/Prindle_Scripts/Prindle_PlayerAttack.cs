@@ -109,6 +109,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
             Debug.Log("Enemy Hit");
             aud.Play();
         }
+        
         if(other.tag == "attackpowerup")
         {
             attackPowerUp = true;

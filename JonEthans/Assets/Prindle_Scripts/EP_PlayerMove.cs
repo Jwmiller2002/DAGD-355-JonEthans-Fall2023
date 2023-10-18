@@ -8,7 +8,7 @@ public class EP_PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Animator anim;
     public float speed;
-    public float playerhurtdamage =5f;
+    
     public float health = 20f;
     private Vector3 oldpos;
     private Vector2 mousePos;
@@ -71,7 +71,7 @@ public class EP_PlayerMove : MonoBehaviour
             
             Destroy(other.gameObject);
             Debug.Log("Shot");
-            health -= playerhurtdamage;
+            health -= 5;
             anim.SetTrigger("hit");
             if (health <= 0)
             {
@@ -80,6 +80,21 @@ public class EP_PlayerMove : MonoBehaviour
                 isDead = true;
                 //Destroy(gameObject);
                 
+            }
+        }
+        if (other.gameObject.CompareTag("Rocket") && isDead == false)
+        {
+            Destroy(other.gameObject);
+            Debug.Log("KABOOM");
+            health -= 10;
+            anim.SetTrigger("hit");
+            if (health <= 0)
+            {
+                anim.SetTrigger("Dead");
+                anim.SetBool("isDead", true);
+                isDead = true;
+                //Destroy(gameObject);
+
             }
         }
     }

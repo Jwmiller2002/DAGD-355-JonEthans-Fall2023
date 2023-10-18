@@ -25,6 +25,8 @@ public class Prindle_Enemy : MonoBehaviour
     private Boolean stunned = false;
     private Boolean slowed = false;
 
+    public float xpGiven;
+
     private void Start()
     {
         level = player.GetComponent<Prindle_PlayerLevel>();
@@ -105,6 +107,7 @@ public class Prindle_Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("died");
+            level.xpNeeded -= xpGiven;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)

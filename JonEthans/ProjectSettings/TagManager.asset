@@ -10,6 +10,8 @@ TagManager:
   - Tacticle
   - Baguette
   - attackpowerup
+  - rocketBoy
+  - Rocket
   layers:
   - Default
   - TransparentFX

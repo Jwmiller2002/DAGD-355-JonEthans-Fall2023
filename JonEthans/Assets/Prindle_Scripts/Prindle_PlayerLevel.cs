@@ -6,8 +6,8 @@ using UnityEngine;
 public class Prindle_PlayerLevel : MonoBehaviour
 {
     [SerializeField] private float level=0;
-    public float xpNeeded =50;
-    public float xpmax =50;
+    public float xpNeeded =10;
+    public float xpmax =10;
     [SerializeField] private Animator anim;
     public Boolean canstun =false;
     public float stunAmmount;
