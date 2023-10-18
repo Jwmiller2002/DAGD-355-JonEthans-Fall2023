@@ -8,7 +8,7 @@ public class EnemyController_NotEthan : MonoBehaviour
 {
     public ParticleSystem bleedEffect;
     public float bleedStacks = 0;
-    public float enemyHealth = 2;
+    public float enemyHealth = 5;
     float bleedTime = 0;
     // Start is called before the first frame update
     void Start()
@@ -25,8 +25,7 @@ public class EnemyController_NotEthan : MonoBehaviour
             bleedParticle();
         }
         if (enemyHealth <= 0f)
-        {
-            //GetComponent<PlayerLevel_NotEthan>().exp += 2;
+        {            
             Destroy(gameObject);
             
         }

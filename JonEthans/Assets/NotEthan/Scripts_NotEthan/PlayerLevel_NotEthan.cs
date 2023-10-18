@@ -7,6 +7,8 @@ public class PlayerLevel_NotEthan : MonoBehaviour
     public int level = 0;
     public float exp = 0;
     float neededEXP = 10;
+    public float knifeNumber = 1;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,10 @@ public class PlayerLevel_NotEthan : MonoBehaviour
             level++;
             neededEXP = neededEXP * 2;
             exp = 0;
+            if (level == 4)
+            { 
+                knifeNumber = 2;
+            }
         }
     }
 

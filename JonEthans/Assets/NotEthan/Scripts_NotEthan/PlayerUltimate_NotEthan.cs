@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerUltimate_NotEthan : MonoBehaviour
 {
     private SpriteRenderer player;
     private Color col;
-    float cooldown = 10;
+    float cooldown;
     public bool isInvisible = false;
     public float damageMultiplier;
+    public PlayerLevel_NotEthan levelRef;
     void Start()
     {
         player = GetComponent<SpriteRenderer>();
         col = player.color;
+        cooldown = 10;
     }
 
     // Update is called once per frame
@@ -26,6 +29,10 @@ public class PlayerUltimate_NotEthan : MonoBehaviour
         if (isInvisible == false)
         { 
         visible();
+        }
+        if (levelRef.level == 6)
+        {
+            cooldown = 5;
         }
     }
 
