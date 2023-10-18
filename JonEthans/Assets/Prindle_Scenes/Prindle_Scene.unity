@@ -301,9 +301,9 @@ MonoBehaviour:
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 68659656}
   basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 0
-  MaxEnemies: 10
-  MaxEnemiesrocketMan: 0
+  rocketSpawnTimerMax: 10
+  MaxEnemies: 2
+  MaxEnemiesrocketMan: 1
 --- !u!1 &153765901
 GameObject:
   m_ObjectHideFlags: 0
@@ -5402,7 +5402,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.21, y: 0.22}
+    oldSize: {x: 0.12, y: 0.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -10553,9 +10553,9 @@ MonoBehaviour:
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 833475973}
   basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 0
-  MaxEnemies: 10
-  MaxEnemiesrocketMan: 0
+  rocketSpawnTimerMax: 10
+  MaxEnemies: 2
+  MaxEnemiesrocketMan: 1
 --- !u!1 &892344656
 GameObject:
   m_ObjectHideFlags: 0
@@ -16476,7 +16476,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1664553170
 Transform:
   m_ObjectHideFlags: 0
@@ -16521,7 +16521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1684864715
 Transform:
   m_ObjectHideFlags: 0
@@ -16615,9 +16615,9 @@ MonoBehaviour:
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 1737741585}
   basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 0
-  MaxEnemies: 10
-  MaxEnemiesrocketMan: 0
+  rocketSpawnTimerMax: 10
+  MaxEnemies: 2
+  MaxEnemiesrocketMan: 1
 --- !u!1 &1794582429
 GameObject:
   m_ObjectHideFlags: 0
@@ -16832,9 +16832,9 @@ MonoBehaviour:
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
   spawner: {fileID: 2127044888}
   basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 0
-  MaxEnemies: 10
-  MaxEnemiesrocketMan: 0
+  rocketSpawnTimerMax: 10
+  MaxEnemies: 2
+  MaxEnemiesrocketMan: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
