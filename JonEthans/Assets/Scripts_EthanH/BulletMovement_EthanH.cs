@@ -6,12 +6,13 @@ public class BulletMovement_EthanH : MonoBehaviour
 {
 
     private GameObject player;
+    public bool firedFromEnemy;
     public bool enemyCollision = false;
     public float force = 500.0f;
     public float lifeTime = 10.0f;
     public float returnSpeed;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     private void Awake()
@@ -38,6 +39,23 @@ public class BulletMovement_EthanH : MonoBehaviour
         rb.velocity = direction * returnSpeed;
     }
 
+    public void setTrajectory(Vector2 direction)
+    {
+        rb.AddForce(direction * force);
+        Destroy(gameObject, lifeTime);
+    }
+
+    public void Split()
+    {
+        Vector2 position = transform.position;
+        position += Random.insideUnitCircle * 0.5f;
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        BulletMovement_EthanH split = Instantiate(this, position, transform.rotation);
+        split.Deflect(direction);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Player")
@@ -50,6 +68,7 @@ public class BulletMovement_EthanH : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" && enemyCollision == true)
         {
             collision.gameObject.GetComponent<Golem_EthanH>().health -= 5;
+            collision.gameObject.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             Debug.Log("Oof");
             Destroy(this.gameObject);
         }

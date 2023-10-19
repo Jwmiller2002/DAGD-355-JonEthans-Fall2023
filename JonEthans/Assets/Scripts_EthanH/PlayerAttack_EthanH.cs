@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SearchService;
 
@@ -58,7 +59,13 @@ public class PlayerAttack_EthanH : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E) && ultimateCD <= 0f)
             {
-                if(level >= 6)
+                if(level >= 9)
+                {
+                    anim.SetTrigger("Ultimate8");
+                    attackRate = 11;
+                    ultimateCD = 20f;
+                }
+                else if(level >= 6)
                 {
                     anim.SetTrigger("Ultimate");
                     attackRate = 11;
@@ -89,16 +96,19 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
                 other.GetComponent<Golem_EthanH>().knockback(1f);
                 other.GetComponent<Golem_EthanH>().takeDamage(damage);
+                other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             }
             else if(level >= 2)
             {
                 other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
                 other.GetComponent<Golem_EthanH>().knockback(0.5f);
                 other.GetComponent<Golem_EthanH>().takeDamage(damage);
+                other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             }
             else
             {
                 other.GetComponent<Golem_EthanH>().takeDamage(damage);
+                other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             }
             bat.Play();
         }
@@ -106,10 +116,22 @@ public class PlayerAttack_EthanH : MonoBehaviour
         {
             if(level >= 10)
             {
-                Vector3 mousePosition = Input.mousePosition;
-                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-                other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
+                Vector3 pos = transform.position;
+                float dist = float.PositiveInfinity;
+                ChaseableEntity_EthanH targ = null;
+                foreach (var obj in ChaseableEntity_EthanH.Entities)
+                {
+                    var d = (pos - obj.transform.position).sqrMagnitude;
+                    if (d < dist)
+                    {
+                        targ = obj;
+                        dist = d;
+                    }
+                }
+
+                Vector3 direction = targ.transform.position - transform.position;
+                other.GetComponent<BulletMovement_EthanH>().Split();
+                other.GetComponent<BulletMovement_EthanH>().rb.velocity = new Vector2(direction.x, direction.y).normalized * other.GetComponent<BulletMovement_EthanH>().force;
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
             else if(level >= 8)
@@ -117,6 +139,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<BulletMovement_EthanH>().Split();
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }

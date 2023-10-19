@@ -5,7 +5,7 @@ using UnityEngine;
 public class Golem_EthanH : MonoBehaviour
 {
 
-    [SerializeField] private Animator anim;
+    [SerializeField] public Animator anim;
     public GameObject bulletPrefab;
     public GameObject player;
     public GameObject trail;
@@ -16,6 +16,11 @@ public class Golem_EthanH : MonoBehaviour
     public float fireRate;
     public int health = 30;
     public float speed;
+
+    float horizontalInput;
+    float verticalInput;
+
+    bool facingRight = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,7 +36,23 @@ public class Golem_EthanH : MonoBehaviour
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        if(knockedBackCD <= 0f)
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+
+        if (horizontalInput > 0 && facingRight == false)
+        {
+            facingRight = true;
+            anim.SetFloat("Move", 1f);
+            //gameObject.transform.localScale = new Vector3(10, 10, 1);
+        }
+        else if (horizontalInput < 0 && facingRight == true)
+        {
+            facingRight = false;
+            anim.SetFloat("Move", -1f);
+            //gameObject.transform.localScale = new Vector3(-10, 10, 1);
+        }
+
+        if (knockedBackCD <= 0f)
         {
             rb.velocity = Vector2.zero;
             trail.GetComponent<TrailRenderer>().enabled = false;
