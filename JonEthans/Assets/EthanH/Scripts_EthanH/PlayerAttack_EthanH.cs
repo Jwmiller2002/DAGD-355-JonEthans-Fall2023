@@ -41,7 +41,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 attackRate = 1;
                 swing.Play();
             }
-            else if (Input.GetMouseButtonDown(1) && level >= 4)
+            else if (Input.GetMouseButtonDown(1) && GetComponent<XPManager_EthanH>().level >= 4)
             {
                 anim.SetTrigger("HAttack");
                 damage = 7;
@@ -59,19 +59,19 @@ public class PlayerAttack_EthanH : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.E) && ultimateCD <= 0f)
             {
-                if(level >= 9)
+                if(GetComponent<XPManager_EthanH>().level >= 9)
                 {
                     anim.SetTrigger("Ultimate8");
                     attackRate = 11;
                     ultimateCD = 20f;
                 }
-                else if(level >= 6)
+                else if(GetComponent<XPManager_EthanH>().level >= 6)
                 {
                     anim.SetTrigger("Ultimate");
                     attackRate = 11;
                     ultimateCD = 20f;
                 }
-                else if(level >= 3)
+                else if(GetComponent<XPManager_EthanH>().level >= 3)
                 {
                     anim.SetTrigger("Ultimate");
                     attackRate = 11;
@@ -91,14 +91,14 @@ public class PlayerAttack_EthanH : MonoBehaviour
     {
         if (other.tag == "EthanH_Enemy")
         {
-            if(level >= 7)
+            if(GetComponent<XPManager_EthanH>().level >= 7)
             {
                 other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
                 other.GetComponent<Golem_EthanH>().knockback(1f);
                 other.GetComponent<Golem_EthanH>().takeDamage(damage);
                 other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             }
-            else if(level >= 2)
+            else if(GetComponent<XPManager_EthanH>().level >= 2)
             {
                 other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
                 other.GetComponent<Golem_EthanH>().knockback(0.5f);
@@ -114,13 +114,13 @@ public class PlayerAttack_EthanH : MonoBehaviour
         }
         if(other.tag == "Ethan2_Enemy")
         {
-            if (level >= 7)
+            if (GetComponent<XPManager_EthanH>().level >= 7)
             {
                 other.GetComponent<Prindle_Enemy>().knockedBackCD += 2f;
                 other.GetComponent<Prindle_Enemy>().knockback(1f);
                 other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             }
-            else if (level >= 2)
+            else if (GetComponent<XPManager_EthanH>().level >= 2)
             {
                 other.GetComponent<Prindle_Enemy>().knockedBackCD += 2f;
                 other.GetComponent<Prindle_Enemy>().knockback(0.5f);
@@ -138,7 +138,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
         }
         if (other.tag == "EthanH_Bullet")
         {
-            if(level >= 10)
+            if(GetComponent<XPManager_EthanH>().level >= 10)
             {
                 Vector3 pos = transform.position;
                 float dist = float.PositiveInfinity;
@@ -158,7 +158,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 other.GetComponent<BulletMovement_EthanH>().rb.velocity = new Vector2(direction.x, direction.y).normalized * other.GetComponent<BulletMovement_EthanH>().force;
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
-            else if(level >= 8)
+            else if(GetComponent<XPManager_EthanH>().level >= 8)
             {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -167,7 +167,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
-            else if(level >= 1)
+            else if(GetComponent<XPManager_EthanH>().level >= 1)
             {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -185,7 +185,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
         }
         if(other.tag == "Ethan2_Bullet")
         {
-            if (level >= 10)
+            if (GetComponent<XPManager_EthanH>().level >= 10)
             {
                 Vector3 pos = transform.position;
                 float dist = float.PositiveInfinity;
@@ -204,7 +204,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 other.GetComponent<Bullet>().Split();
                 other.GetComponent<Bullet>().rb.velocity = new Vector2(direction.x, direction.y).normalized * other.GetComponent<Bullet>().bulletSpeed;
             }
-            else if (level >= 8)
+            else if (GetComponent<XPManager_EthanH>().level >= 8)
             {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -212,7 +212,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 other.GetComponent<Bullet>().Split();
                 other.GetComponent<Bullet>().Deflect(direction);
             }
-            else if (level >= 1)
+            else if (GetComponent<XPManager_EthanH>().level >= 1)
             {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -229,7 +229,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
         }
         if(other.tag == "Rocket")
         {
-            if(level >= 5)
+            if(GetComponent<XPManager_EthanH>().level >= 5)
             {
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);

@@ -36,13 +36,13 @@ public class XPManager_EthanH : MonoBehaviour
         xpAmount += xpGain;
         xpAmount = Mathf.Clamp(xpAmount, 0, nextLevelAmount);
 
-        xpBar.fillAmount = xpAmount / 10f;
+        xpBar.fillAmount = xpAmount / nextLevelAmount;
     }
 
     public void ResetBar()
     {
         xpAmount = 0;
-        nextLevelAmount = nextLevelAmount * 2;
+        nextLevelAmount *= 2;
     }
 
 }
