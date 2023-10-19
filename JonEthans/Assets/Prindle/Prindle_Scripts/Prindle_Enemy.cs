@@ -18,6 +18,8 @@ public class Prindle_Enemy : MonoBehaviour
     public float distanceToStop = 3f;
     public Transform firingPoint;
     public GameObject bulletPrefab;
+    public GameObject trail;
+    public float knockedBackCD;
 
     public Prindle_PlayerLevel level;
     public GameObject player;
@@ -61,6 +63,8 @@ public class Prindle_Enemy : MonoBehaviour
         {
             Shoot();
         }
+
+        if(knockedBackCD <= 0) trail.GetComponent<TrailRenderer>().enabled = false;
     }
     private void Shoot()
     {
@@ -121,6 +125,17 @@ public class Prindle_Enemy : MonoBehaviour
             level.xpNeeded -= xpGiven;
         }
     }
+
+    public void knockback(float returnSpeed)
+    {
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        trail.GetComponent<TrailRenderer>().enabled = true;
+        rb.velocity = direction * returnSpeed;
+    }
+
     private void OnParticleCollision(GameObject other)
     {
         print("playernotother");

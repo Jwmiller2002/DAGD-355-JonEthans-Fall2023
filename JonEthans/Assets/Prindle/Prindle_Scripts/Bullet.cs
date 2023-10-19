@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public float returnSpeed;
     public Boolean isRocket =false;
     [SerializeField] float lifeTime =3F;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] private Animator anim;
     private void Start()
     {
@@ -41,6 +41,23 @@ public class Bullet : MonoBehaviour
     public void Deflect(Vector2 direction)
     {
         rb.velocity = direction * returnSpeed;
+    }
+
+    public void setTrajectory(Vector2 direction)
+    {
+        rb.AddForce(direction * bulletSpeed);
+        Destroy(gameObject, lifeTime);
+    }
+
+    public void Split()
+    {
+        Vector2 position = transform.position;
+        position += UnityEngine.Random.insideUnitCircle * 0.5f;
+        Vector3 mousePosition = Input.mousePosition;
+        mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+        Bullet split = Instantiate(this, position, transform.rotation);
+        split.Deflect(direction);
     }
 
 }

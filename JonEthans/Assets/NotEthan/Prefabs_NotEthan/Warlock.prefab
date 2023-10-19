@@ -9737,6 +9737,7 @@ GameObject:
   - component: {fileID: 7689853026962312135}
   - component: {fileID: 4466818973307855315}
   - component: {fileID: 8636345292418844742}
+  - component: {fileID: 4657834938971411988}
   m_Layer: 0
   m_Name: Warlock
   m_TagString: notEthan_Enemy
@@ -9923,3 +9924,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4657834938971411988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7862348793822468297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f5b541f54153a64b860b9fdfc8e62be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

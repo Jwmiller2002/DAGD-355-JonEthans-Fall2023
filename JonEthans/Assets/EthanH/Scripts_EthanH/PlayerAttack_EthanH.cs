@@ -112,7 +112,31 @@ public class PlayerAttack_EthanH : MonoBehaviour
             }
             bat.Play();
         }
-        if (other.tag == "Bullet")
+        if(other.tag == "Ethan2_Enemy")
+        {
+            if (level >= 7)
+            {
+                other.GetComponent<Prindle_Enemy>().knockedBackCD += 2f;
+                other.GetComponent<Prindle_Enemy>().knockback(1f);
+                other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
+            }
+            else if (level >= 2)
+            {
+                other.GetComponent<Prindle_Enemy>().knockedBackCD += 2f;
+                other.GetComponent<Prindle_Enemy>().knockback(0.5f);
+                other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
+            }
+            else
+            {
+                other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
+            }
+            bat.Play();
+        }
+        if (other.tag == "notEthan_Enemy")
+        {
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
+        }
+        if (other.tag == "EthanH_Bullet")
         {
             if(level >= 10)
             {
@@ -150,6 +174,50 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
+                batFX.Play();
+            }
+            else
+            {
+                Destroy(other.gameObject);
+                batFX.Play();
+            }
+            bat.Play();
+        }
+        if(other.tag == "Ethan2_Bullet")
+        {
+            if (level >= 10)
+            {
+                Vector3 pos = transform.position;
+                float dist = float.PositiveInfinity;
+                ChaseableEntity_EthanH targ = null;
+                foreach (var obj in ChaseableEntity_EthanH.Entities)
+                {
+                    var d = (pos - obj.transform.position).sqrMagnitude;
+                    if (d < dist)
+                    {
+                        targ = obj;
+                        dist = d;
+                    }
+                }
+
+                Vector3 direction = targ.transform.position - transform.position;
+                other.GetComponent<Bullet>().Split();
+                other.GetComponent<Bullet>().rb.velocity = new Vector2(direction.x, direction.y).normalized * other.GetComponent<Bullet>().bulletSpeed;
+            }
+            else if (level >= 8)
+            {
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<Bullet>().Split();
+                other.GetComponent<Bullet>().Deflect(direction);
+            }
+            else if (level >= 1)
+            {
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<Bullet>().Deflect(direction);
                 batFX.Play();
             }
             else

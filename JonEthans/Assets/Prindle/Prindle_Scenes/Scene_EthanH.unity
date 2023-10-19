@@ -9453,7 +9453,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1667104595
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9638,6 +9638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xpBar: {fileID: 347575483}
   xpAmount: 0
+  nextLevelAmount: 0
 --- !u!114 &1667104602
 MonoBehaviour:
   m_ObjectHideFlags: 0
