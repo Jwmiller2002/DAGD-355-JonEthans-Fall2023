@@ -299,8 +299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-  strongEnemy: {fileID: 0}
-  supportEnemy: {fileID: 0}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 68659656}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
@@ -10555,8 +10555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-  strongEnemy: {fileID: 0}
-  supportEnemy: {fileID: 0}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 833475973}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
@@ -15754,6 +15754,7 @@ GameObject:
   - component: {fileID: 1272604648}
   - component: {fileID: 1272604649}
   - component: {fileID: 1272604650}
+  - component: {fileID: 1272604651}
   m_Layer: 0
   m_Name: Prindle_player
   m_TagString: Player
@@ -16088,6 +16089,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1272604651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272604639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4991d9989a8311447a050e7b31137a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
+  healthAmount: 100
 --- !u!1 &1288288289
 GameObject:
   m_ObjectHideFlags: 0
@@ -16555,8 +16570,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-  strongEnemy: {fileID: 0}
-  supportEnemy: {fileID: 0}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 1737741585}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
@@ -16821,8 +16836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-  strongEnemy: {fileID: 0}
-  supportEnemy: {fileID: 0}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 2127044888}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
