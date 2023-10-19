@@ -16385,6 +16385,8 @@ GameObject:
   - component: {fileID: 1272604649}
   - component: {fileID: 1272604650}
   - component: {fileID: 1272604651}
+  - component: {fileID: 1272604653}
+  - component: {fileID: 1272604652}
   m_Layer: 0
   m_Name: Prindle_player
   m_TagString: Player
@@ -16731,8 +16733,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4991d9989a8311447a050e7b31137a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1731656337}
   healthAmount: 100
+--- !u!114 &1272604652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272604639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02c8595dc9c72445b04961cd7f5f07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife1: {fileID: 1936086050}
+  knife2: {fileID: 2085951425}
+  knife3: {fileID: 492513758}
+  knifeAmount: 0
+--- !u!114 &1272604653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272604639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b0f49de8a42c049b65962229859459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpBar: {fileID: 940285909}
+  xpAmount: 0
+  nextLevelAmount: 0
 --- !u!1 &1288288289
 GameObject:
   m_ObjectHideFlags: 0
