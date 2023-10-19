@@ -10,7 +10,7 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     public float bleedRange = 0.5f;
     public AudioSource jump;
     public bool isTeleport = false;
-    public PlayerLevel_NotEthan levelRef;
+    public XPManager_EthanH levelRef;
 
     Vector3 mousePos;
     Vector2 pos = new Vector2(0f, 0f);
