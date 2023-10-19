@@ -83,12 +83,6 @@ public class PlayerMovement_EthanH : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log(health);
         }
-        if(other.tag == "Ethan2_Bullet")
-        {
-            Destroy(other.gameObject);
-            GetComponent<HealthManager_EthanH>().TakeDamage(5);
-            anim.SetTrigger("Hit");
-        }
         if (other.tag == "Rocket")
         {
             GetComponent<HealthManager_EthanH>().TakeDamage(10);

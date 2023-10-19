@@ -135,6 +135,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
         if (other.tag == "notEthan_Enemy")
         {
             other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
+            bat.Play();
         }
         if (other.tag == "EthanH_Bullet")
         {

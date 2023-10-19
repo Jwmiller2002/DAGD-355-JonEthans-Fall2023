@@ -58,21 +58,7 @@ public class BulletMovement_EthanH : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "EthanH_Player")
-        {
-            collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
-            //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
-            //Debug.Log("Oof");
-            Destroy(this.gameObject);
-        }
-        if (collision.gameObject.tag == "Ethan2_Player")
-        {
-            collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
-            //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
-            //Debug.Log("Oof");
-            Destroy(this.gameObject);
-        }
-        if (collision.gameObject.tag == "notEthan_Player")
+        if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
             //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");

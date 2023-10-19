@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Range(1,10)]
-    public float bulletSpeed =30f;
+    [Range(1, 10)]
+    public float bulletSpeed = 30f;
     public float returnSpeed;
-    public Boolean isRocket =false;
-    [SerializeField] float lifeTime =3F;
+    public Boolean isRocket = false;
+    [SerializeField] float lifeTime = 3F;
     public Rigidbody2D rb;
     [SerializeField] private Animator anim;
     private void Start()
@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            if(lifeTime <= 0)
+            if (lifeTime <= 0)
             {
                 //anim.settrigger("explosion")
                 Destroy(gameObject);
@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
                 lifeTime -= Time.deltaTime;
             }
         }
-       
+
     }
     private void FixedUpdate()
     {
@@ -60,4 +60,15 @@ public class Bullet : MonoBehaviour
         split.Deflect(direction);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
+            //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
+            //Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
+
+    }
 }
