@@ -7,7 +7,7 @@ public class Golem_EthanH : MonoBehaviour
 
     [SerializeField] public Animator anim;
     public GameObject bulletPrefab;
-    public GameObject player;
+    private GameObject player;
     public GameObject trail;
     public Transform bulletPos;
     private Rigidbody2D rb;
@@ -26,6 +26,7 @@ public class Golem_EthanH : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

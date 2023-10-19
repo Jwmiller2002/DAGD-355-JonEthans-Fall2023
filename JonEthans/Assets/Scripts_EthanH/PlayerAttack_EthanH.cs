@@ -96,6 +96,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 other.GetComponent<Golem_EthanH>().knockedBackCD += 2f;
                 other.GetComponent<Golem_EthanH>().knockback(1f);
                 other.GetComponent<Golem_EthanH>().takeDamage(damage);
+                other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
                 other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             }
             else if(level >= 2)

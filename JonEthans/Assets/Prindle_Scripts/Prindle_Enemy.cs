@@ -91,6 +91,7 @@ public class Prindle_Enemy : MonoBehaviour
             }
         }
     }
+
     private void RotateTwardsTarget()
     {
         Vector2 targetDirection = target.position - transform.position;
