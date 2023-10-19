@@ -20,7 +20,7 @@ public class Prindle_Enemy : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject trail;
     public float knockedBackCD;
-
+    public XPManager_EthanH xp;
     public Prindle_PlayerLevel level;
     public GameObject player;
 
@@ -35,7 +35,10 @@ public class Prindle_Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         level = player.GetComponent<Prindle_PlayerLevel>();
         rb = GetComponent<Rigidbody2D>();
+        xp = player.GetComponent<XPManager_EthanH>();
+
         timeToFire = fireRate;
+        
     }
     private void Update()
     {
@@ -122,7 +125,7 @@ public class Prindle_Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("died");
-            level.xpNeeded -= xpGiven;
+            xp.GainXP(xpGiven);
         }
     }
 

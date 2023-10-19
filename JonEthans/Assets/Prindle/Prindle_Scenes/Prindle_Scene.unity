@@ -16581,6 +16581,8 @@ MonoBehaviour:
   ultSlow: 0
   tactStun: 0
   ultBuff: 0
+  player: {fileID: 1272604639}
+  xp: {fileID: 0}
 --- !u!61 &1272604649
 BoxCollider2D:
   m_ObjectHideFlags: 0

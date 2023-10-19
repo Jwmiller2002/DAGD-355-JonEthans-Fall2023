@@ -22,14 +22,23 @@ public class Prindle_PlayerLevel : MonoBehaviour
     public float ultSlow;
     public float tactStun;
     public Boolean ultBuff =false;
+    public GameObject player;
+    public XPManager_EthanH xp;
     // Update is called once per frame
+    private void Start()
+    {
+        xp = player.GetComponent<XPManager_EthanH>();
+        
+    }
     void Update()
     {
+        level = xp.level;
         if (Input.GetKeyDown("r") && level <10)
         {
             level += 1;
             print("d");
         }
+        /*
         if(xpNeeded <= 0)
         {
             xpNeeded = xpmax * 2;
@@ -37,7 +46,9 @@ public class Prindle_PlayerLevel : MonoBehaviour
             level += 1;
             print("levelUP");
         }
-        print(level);
+        */
+        print("current"+level);
+        
         switch (level)
         {
             case 0:

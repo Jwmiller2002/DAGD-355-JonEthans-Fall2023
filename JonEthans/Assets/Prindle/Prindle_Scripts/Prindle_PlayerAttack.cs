@@ -18,7 +18,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     private Score score;
     AudioSource aud;
     public AudioClip hit, tact, ult;
-
+    public XPManager_EthanH xp;
     
     Boolean attackPowerUp = false;
     Boolean gotAttackPowerup = false;
@@ -27,7 +27,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        
+        xp = player.GetComponent<XPManager_EthanH>();
         aud = GetComponent<AudioSource>();
         level = player.GetComponent<Prindle_PlayerLevel>();
         score = scoreText.GetComponent<Score>();
@@ -112,6 +112,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         }
         if (other.tag == "notEthan_Enemy")
         {
+            xp.GainXP(1);
             other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
             score.playerscore += 15;
             Debug.Log("Enemy Hit");

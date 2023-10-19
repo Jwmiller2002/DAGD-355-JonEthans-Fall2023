@@ -11,6 +11,9 @@ public class EnemyController_NotEthan : MonoBehaviour
     public float enemyHealth = 5;
     float bleedTime = 0;
     public GameObject Dagger_Pickup;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {
