@@ -201,7 +201,7 @@ MonoBehaviour:
   fireRate: 2
   health: 30
   speed: 2
-  Dagger_Pickup: {fileID: 4313263069899179086, guid: 6a916825fb7408348af5019fca4d2c73, type: 3}
+  Dagger_Pickup: {fileID: 211973779832422495, guid: da1693266acdfda4c894852cf3cba1e9, type: 3}
   Bread_Pickup: {fileID: 3681286350574144282, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
   Grind_Pickup: {fileID: 3516216399165769341, guid: a511d9eec0997144d8e2467a0cb83930, type: 3}
 --- !u!50 &2088074791116403392
