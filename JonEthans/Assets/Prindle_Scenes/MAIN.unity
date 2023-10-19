@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &58801285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -400,8 +400,8 @@ Canvas:
   m_GameObject: {fileID: 225544827}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1834518920}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -10413,7 +10413,7 @@ Transform:
   m_GameObject: {fileID: 428491901}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 5.18, z: 7.065936}
+  m_LocalPosition: {x: 0.08, y: 5.88, z: 7.065936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10433,9 +10433,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 428491901}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &548568006
@@ -11040,7 +11044,7 @@ Transform:
   m_GameObject: {fileID: 628186160}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: -5.05, z: 7.065936}
+  m_LocalPosition: {x: 0.08, y: -5.95, z: 7.065936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11060,9 +11064,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 628186160}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &673915747
@@ -11387,7 +11395,7 @@ Transform:
   m_GameObject: {fileID: 817357434}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.29, y: 0.011395976, z: 7.065936}
+  m_LocalPosition: {x: 9.17, y: 0.011395976, z: 7.065936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11407,9 +11415,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 817357434}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &822320520
@@ -16771,7 +16783,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -368.26157, y: 207.01093}
+  m_AnchoredPosition: {x: -368.26157, y: 301.3}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1409520535
@@ -16959,7 +16971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -455.08, y: 176.3894}
+  m_AnchoredPosition: {x: -455.08, y: 270.67847}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1458786596
@@ -16980,7 +16992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1458786597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17093,7 +17105,7 @@ Transform:
   m_GameObject: {fileID: 1491971601}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.13, y: -0.01, z: 7.065936}
+  m_LocalPosition: {x: -9.07, y: -0.01, z: 7.065936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17113,9 +17125,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+  supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 1491971601}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &1532321966
@@ -17154,7 +17170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -517.8141, y: 142.90063}
+  m_AnchoredPosition: {x: -517.8141, y: 237.1897}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1558641787
