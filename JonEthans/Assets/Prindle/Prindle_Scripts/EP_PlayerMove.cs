@@ -66,7 +66,7 @@ public class EP_PlayerMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Bullet") && isDead == false)
+        if (other.gameObject.CompareTag("Ethan2_Bullet") && isDead == false)
         {
             
             Destroy(other.gameObject);
@@ -97,7 +97,7 @@ public class EP_PlayerMove : MonoBehaviour
 
             }
         }
-        if (other.gameObject.CompareTag("") && isDead == false)
+        if (other.gameObject.CompareTag("EthanH_Bullet") && isDead == false)
         {
 
             Destroy(other.gameObject);
