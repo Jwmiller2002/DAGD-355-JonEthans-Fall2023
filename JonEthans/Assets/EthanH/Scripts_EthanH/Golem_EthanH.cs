@@ -16,6 +16,9 @@ public class Golem_EthanH : MonoBehaviour
     public float fireRate;
     public int health = 30;
     public float speed;
+    public GameObject Dagger_Pickup;
+    public GameObject Bread_Pickup;
+    public GameObject Grind_Pickup;
 
     float horizontalInput;
     float verticalInput;
@@ -82,6 +85,24 @@ public class Golem_EthanH : MonoBehaviour
         {
             Destroy(gameObject);
             player.GetComponent<XPManager_EthanH>().GainXP(8f);
+            float itemChance = Random.Range(0, 20);
+            if (itemChance <= 1)
+            {
+                int item = Random.Range(0, 2);
+                if (item == 0)
+                {
+                    Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);
+                }
+                if (item == 1)
+                {
+                    Instantiate(Bread_Pickup, transform.position, Quaternion.identity);
+                }
+                if (item == 2)
+                {
+                    Instantiate(Grind_Pickup, transform.position, Quaternion.identity);
+                }
+
+            }
             //Debug.Log(player.GetComponent<PlayerAttack_EthanH>().xp);
         }
     }

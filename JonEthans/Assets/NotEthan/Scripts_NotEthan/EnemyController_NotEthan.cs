@@ -12,8 +12,10 @@ public class EnemyController_NotEthan : MonoBehaviour
     public float enemyHealth = 5;
     float bleedTime = 0;
     public GameObject Dagger_Pickup;
+    public GameObject Bread_Pickup;
+    public GameObject Grind_Pickup;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,20 @@ public class EnemyController_NotEthan : MonoBehaviour
             player.GetComponent<XPManager_EthanH>().GainXP(1f);
             if (itemChance <= 1)
             {
-                Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);
+                int item = Random.Range(0, 2);
+                if(item == 0)
+                {
+                    Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);
+                }
+                if (item == 1)
+                {
+                    Instantiate(Bread_Pickup, transform.position, Quaternion.identity);
+                }
+                if (item == 2)
+                {
+                    Instantiate(Grind_Pickup, transform.position, Quaternion.identity);
+                }
+
             }
         }
 
