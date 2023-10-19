@@ -120,6 +120,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         if (other.tag == "EthanH_Enemy")
         {
             other.GetComponent<Golem_EthanH>().takeDamage((int)damage);
+            other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             score.playerscore += 15;
             Debug.Log("Enemy Hit");
             aud.Play();
