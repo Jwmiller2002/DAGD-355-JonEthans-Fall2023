@@ -6,7 +6,7 @@ using UnityEngine;
 public class Prindle_Enemy : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private float health;
+    [SerializeField] public float health;
     public Transform target;
     public float speed;
     public float rotateSpeed = 0.0025f;

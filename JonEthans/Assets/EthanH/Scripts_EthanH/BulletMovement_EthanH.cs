@@ -58,18 +58,37 @@ public class BulletMovement_EthanH : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "EthanH_Player")
         {
             collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
             //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
             //Debug.Log("Oof");
             Destroy(this.gameObject);
         }
-        if (collision.gameObject.tag == "Enemy" )
+        if (collision.gameObject.tag == "Ethan2_Player")
+        {
+            collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
+            //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
+            //Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "notEthan_Player")
+        {
+            collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
+            //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
+            //Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "EthanH_Enemy" )
         {
             collision.gameObject.GetComponent<Golem_EthanH>().health -= 5;
             collision.gameObject.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             //Debug.Log("Oof");
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.tag == "Ethan2_Enemy")
+        {
+            collision.gameObject.GetComponent<Prindle_Enemy>().health -= 5;
             Destroy(this.gameObject);
         }
     }
