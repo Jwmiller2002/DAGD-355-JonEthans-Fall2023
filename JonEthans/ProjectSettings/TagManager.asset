@@ -9,6 +9,7 @@ TagManager:
   - Ultimate
   - Tacticle
   - Baguette
+  - BuffArea
   layers:
   - Default
   - TransparentFX

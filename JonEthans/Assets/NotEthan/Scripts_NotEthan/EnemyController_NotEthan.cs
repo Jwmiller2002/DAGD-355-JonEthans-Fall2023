@@ -10,6 +10,7 @@ public class EnemyController_NotEthan : MonoBehaviour
     public float bleedStacks = 0;
     public float enemyHealth = 5;
     float bleedTime = 0;
+    public GameObject Dagger_Pickup;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,11 @@ public class EnemyController_NotEthan : MonoBehaviour
         if (enemyHealth <= 0f)
         {            
             Destroy(gameObject);
-            
+            float itemChance = Random.Range(0, 20);
+            if (itemChance <= 1)
+            {
+                Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);
+            }
         }
 
     }
@@ -55,4 +60,5 @@ public class EnemyController_NotEthan : MonoBehaviour
     {
         bleedEffect.Play();
     }
+
 }
