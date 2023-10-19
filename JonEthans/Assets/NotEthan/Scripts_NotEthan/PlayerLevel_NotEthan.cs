@@ -13,7 +13,7 @@ public class PlayerLevel_NotEthan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        knifeNumber = 1;
     }
 
     // Update is called once per frame

@@ -33,7 +33,8 @@ public class KnifeHit2_NotEthan : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage*ultRef.damageMultiplier*levelRef.knifeNumber);
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage * ultRef.damageMultiplier * levelRef.knifeNumber);
+            other.GetComponent<Prindle_Enemy>().TakeDamage(damage * ultRef.damageMultiplier * levelRef.knifeNumber);
             bleedRoll = Random.Range(1, 10);
             if (bleedRoll <= bleedChance)
             {
@@ -42,6 +43,7 @@ public class KnifeHit2_NotEthan : MonoBehaviour
             if (ultRef.isInvisible == true)
             {
                 other.GetComponent<EnemyController_NotEthan>().bleedStacks++;
+                
                 ultRef.isInvisible = false;
             }
         }

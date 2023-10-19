@@ -16,6 +16,7 @@ public class PlayerUltimate_NotEthan : MonoBehaviour
         player = GetComponent<SpriteRenderer>();
         col = player.color;
         cooldown = 10;
+        damageMultiplier = 1;
     }
 
     // Update is called once per frame

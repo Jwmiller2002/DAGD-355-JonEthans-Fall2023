@@ -82,7 +82,7 @@ public class Golem_EthanH : MonoBehaviour
         {
             Destroy(gameObject);
             player.GetComponent<XPManager_EthanH>().GainXP(8f);
-            Debug.Log(player.GetComponent<PlayerAttack_EthanH>().xp);
+            //Debug.Log(player.GetComponent<PlayerAttack_EthanH>().xp);
         }
     }
 

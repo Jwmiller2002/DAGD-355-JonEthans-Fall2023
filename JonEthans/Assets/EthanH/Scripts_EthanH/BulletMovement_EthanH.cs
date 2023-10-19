@@ -7,7 +7,7 @@ public class BulletMovement_EthanH : MonoBehaviour
 
     private GameObject player;
     public bool firedFromEnemy;
-    public bool enemyCollision = false;
+    public bool enemyCollision = true;
     public float force = 500.0f;
     public float lifeTime = 10.0f;
     public float returnSpeed;
@@ -61,15 +61,15 @@ public class BulletMovement_EthanH : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<HealthManager_EthanH>().TakeDamage(5f);
-            collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
-            Debug.Log("Oof");
+            //collision.gameObject.GetComponent<PlayerMovement_EthanH>().anim.SetTrigger("Hit");
+            //Debug.Log("Oof");
             Destroy(this.gameObject);
         }
-        if (collision.gameObject.tag == "Enemy" && enemyCollision == true)
+        if (collision.gameObject.tag == "Enemy" )
         {
             collision.gameObject.GetComponent<Golem_EthanH>().health -= 5;
             collision.gameObject.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
-            Debug.Log("Oof");
+            //Debug.Log("Oof");
             Destroy(this.gameObject);
         }
     }
