@@ -56,10 +56,7 @@ public class Prindle_Enemy : MonoBehaviour
         {
             GetTarget();
         }
-        else
-        {
-            RotateTwardsTarget();
-        }
+        
 
 
         if (Vector2.Distance(target.position, transform.position) <= distanceToShoot)

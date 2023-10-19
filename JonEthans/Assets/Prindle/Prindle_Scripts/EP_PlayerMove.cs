@@ -7,6 +7,7 @@ public class EP_PlayerMove : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Animator anim;
+    //[SerializeField] private Animator anim2;
     public float speed;
     
     public float health;
@@ -84,6 +85,7 @@ public class EP_PlayerMove : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Rocket") && isDead == false)
         {
+            //anim2.SetTrigger("explode");
             Destroy(other.gameObject);
             Debug.Log("KABOOM");
             HP.TakeDamage(10);
