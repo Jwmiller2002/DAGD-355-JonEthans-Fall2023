@@ -10,6 +10,18 @@ public class MainMenu_NotEthan : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void Hammer()
+    {
+        SceneManager.LoadScene(1);
+    }
+    public void Bat()
+    {
+        SceneManager.LoadScene(3);
+    }
+    public void Knife()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void QuitGame()
     { 
     Application.Quit();
