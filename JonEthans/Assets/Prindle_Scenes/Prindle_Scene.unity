@@ -460,7 +460,7 @@ GameObject:
   - component: {fileID: 491360347}
   m_Layer: 0
   m_Name: ULTTIMATE
-  m_TagString: Untagged
+  m_TagString: Ultimate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -673,7 +673,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -1535,7 +1535,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 8
-      repeatInterval: 0.4
+      repeatInterval: 0.3
       probability: 1
   SizeModule:
     enabled: 0
@@ -4181,7 +4181,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -4351,14 +4351,14 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 1
+    radiusScale: 2
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -9197,7 +9197,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -9374,7 +9374,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -10498,7 +10498,7 @@ Transform:
   m_GameObject: {fileID: 711139427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.242, y: 0.327, z: 0}
+  m_LocalPosition: {x: -0.4, y: 0.49, z: 0}
   m_LocalScale: {x: 0.2697255, y: 0.2697255, z: 0.2697255}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14338,7 +14338,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     type: 0
     collisionMode: 0
@@ -14515,7 +14515,7 @@ ParticleSystem:
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -16224,7 +16224,7 @@ GameObject:
   - component: {fileID: 1381194032}
   m_Layer: 0
   m_Name: ult2
-  m_TagString: Untagged
+  m_TagString: Ultimate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16577,7 +16577,7 @@ Transform:
   m_GameObject: {fileID: 1794582429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.8002155, w: 0.59971267}
-  m_LocalPosition: {x: 0.302, y: 0.33, z: 0}
+  m_LocalPosition: {x: 0.42, y: 0.44, z: 0}
   m_LocalScale: {x: 0.21334, y: 0.21334, z: 0.21334}
   m_ConstrainProportionsScale: 0
   m_Children:

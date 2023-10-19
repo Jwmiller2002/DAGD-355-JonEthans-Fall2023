@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: m_TagString
-      value: rocketBoy
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6123529363973401409, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
       propertyPath: m_LocalScale.x

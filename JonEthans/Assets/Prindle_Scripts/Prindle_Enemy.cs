@@ -120,12 +120,25 @@ public class Prindle_Enemy : MonoBehaviour
             level.xpNeeded -= xpGiven;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnParticleCollision(GameObject other)
     {
+        print("playernotother");
+        if (other.tag == "Ultimate")
+        {
+            print("ultTTTT");
+            slowed = true;
+            if (level.ultBuff)
+            {
+                stunned = true;
+            }
+
+        }
         if (other.tag == "player")
         {
+            print("playernotother");
             if (other.tag == "Ultimate")
             {
+                print("ult");
                 slowed = true;
                 if (level.ultBuff)
                 {
@@ -135,6 +148,7 @@ public class Prindle_Enemy : MonoBehaviour
             }
             if (other.tag == "Tacticle")
             {
+                print("tact");
                 stunned = true;
             }
         }
