@@ -299,9 +299,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 0}
+  supportEnemy: {fileID: 0}
   spawner: {fileID: 68659656}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &153765901
@@ -4183,8 +4187,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -4246,7 +4250,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4299,7 +4303,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -9199,8 +9203,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -9262,7 +9266,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9315,7 +9319,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10551,9 +10555,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 0}
+  supportEnemy: {fileID: 0}
   spawner: {fileID: 833475973}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &892344656
@@ -14340,8 +14348,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -14403,7 +14411,7 @@ ParticleSystem:
     m_Bounce:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14456,7 +14464,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -16547,9 +16555,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 0}
+  supportEnemy: {fileID: 0}
   spawner: {fileID: 1737741585}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1 &1794582429
@@ -16809,9 +16821,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   basicEnemy: {fileID: 5874372914635856389, guid: 22714e2f4c44fd94899d7f14dc90d972, type: 3}
   rocketEnemy: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
+  strongEnemy: {fileID: 0}
+  supportEnemy: {fileID: 0}
   spawner: {fileID: 2127044888}
   basicSpawnTimerMax: 5
   rocketSpawnTimerMax: 10
+  supportEnemyTimerMax: 0
+  strongEnemyTimerMax: 0
   MaxEnemies: 2
   MaxEnemiesrocketMan: 1
 --- !u!1660057539 &9223372036854775807
