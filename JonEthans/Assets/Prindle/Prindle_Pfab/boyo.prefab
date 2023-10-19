@@ -341,6 +341,9 @@ MonoBehaviour:
   level: {fileID: 0}
   player: {fileID: 0}
   xpGiven: 2
+  Dagger_Pickup: {fileID: 4313263069899179086, guid: 6a916825fb7408348af5019fca4d2c73, type: 3}
+  Bread_Pickup: {fileID: 3681286350574144282, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
+  Grind_Pickup: {fileID: 3516216399165769341, guid: a511d9eec0997144d8e2467a0cb83930, type: 3}
 --- !u!58 &2485523620984378045
 CircleCollider2D:
   m_ObjectHideFlags: 0

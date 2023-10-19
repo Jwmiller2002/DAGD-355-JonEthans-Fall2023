@@ -53,7 +53,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
         {
             case 0:
                 print("level0");
-                weaponSpeed = 4f;
+                weaponSpeed = 3.5f;
                 break;
             case 1:
                 print("level1");

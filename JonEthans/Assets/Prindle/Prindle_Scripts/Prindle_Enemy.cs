@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Prindle_Enemy : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class Prindle_Enemy : MonoBehaviour
     private Boolean slowed = false;
 
     public float xpGiven;
+    public GameObject Dagger_Pickup;
+    public GameObject Bread_Pickup;
+    public GameObject Grind_Pickup;
 
     private void Start()
     {
@@ -123,6 +127,25 @@ public class Prindle_Enemy : MonoBehaviour
             Destroy(gameObject);
             Debug.Log("died");
             xp.GainXP(xpGiven);
+            float itemChance = Random.Range(0, 20);
+            player.GetComponent<XPManager_EthanH>().GainXP(1f);
+            if (itemChance <= 1)
+            {
+                int item = Random.Range(0, 2);
+                if (item == 0)
+                {
+                    Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);
+                }
+                if (item == 1)
+                {
+                    Instantiate(Bread_Pickup, transform.position, Quaternion.identity);
+                }
+                if (item == 2)
+                {
+                    Instantiate(Grind_Pickup, transform.position, Quaternion.identity);
+                }
+
+            }
         }
     }
 
