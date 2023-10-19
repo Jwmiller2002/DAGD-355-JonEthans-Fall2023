@@ -110,8 +110,23 @@ public class Prindle_PlayerAttack : MonoBehaviour
             Debug.Log("Enemy Hit");
             aud.Play();
         }
-        
-        if(other.tag == "attackpowerup")
+        if (other.tag == "notEthan_Enemy")
+        {
+            other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
+            score.playerscore += 15;
+            Debug.Log("Enemy Hit");
+            aud.Play();
+        }
+        if (other.tag == "EthanH_Enemy")
+        {
+            other.GetComponent<Golem_EthanH>().takeDamage((int)damage);
+            score.playerscore += 15;
+            Debug.Log("Enemy Hit");
+            aud.Play();
+        }
+
+
+        if (other.tag == "attackpowerup")
         {
             attackPowerUp = true;
             Destroy(other.gameObject);
