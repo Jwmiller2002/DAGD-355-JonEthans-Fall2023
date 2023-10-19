@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/NotEthan/Menu_NotEthan.unity
     guid: f3ef20ff86d7b6c43ba72185c2544651
   - enabled: 1
-    path: Assets/Prindle_Scenes/Prindle_Scene.unity
+    path: Assets/Prindle/Prindle_Scenes/Prindle_Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/NotEthan/Scene_NotEthan.unity
