@@ -31,7 +31,7 @@ public class EP_PlayerMove : MonoBehaviour
         float v = Input.GetAxis("Vertical"); 
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        float angle = Mathf.Atan2(mousePos.y -transform.position.y, mousePos.x - transform.position.x) *Mathf.Rad2Deg -360f;
+        //float angle = Mathf.Atan2(mousePos.y -transform.position.y, mousePos.x - transform.position.x) *Mathf.Rad2Deg -360f;
         //float hammerAngle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg + 222f;
         if (isDead == false)
         {
