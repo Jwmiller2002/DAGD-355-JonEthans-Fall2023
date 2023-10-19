@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SearchService;
 
@@ -129,6 +130,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 }
 
                 Vector3 direction = targ.transform.position - transform.position;
+                other.GetComponent<BulletMovement_EthanH>().Split();
                 other.GetComponent<BulletMovement_EthanH>().rb.velocity = new Vector2(direction.x, direction.y).normalized * other.GetComponent<BulletMovement_EthanH>().force;
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }
@@ -137,6 +139,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
                 Vector3 mousePosition = Input.mousePosition;
                 mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
                 Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<BulletMovement_EthanH>().Split();
                 other.GetComponent<BulletMovement_EthanH>().Deflect(direction);
                 other.GetComponent<BulletMovement_EthanH>().enemyCollision = true;
             }

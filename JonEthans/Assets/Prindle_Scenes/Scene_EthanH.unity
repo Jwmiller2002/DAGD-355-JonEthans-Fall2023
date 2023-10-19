@@ -7576,6 +7576,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2884953855757027244, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15082507
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884953855757027244, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.14794376
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884953855757027244, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.00033100694
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884953855757027244, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.0077607892
+      objectReference: {fileID: 0}
     - target: {fileID: 3681286350574144282, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
       propertyPath: m_Name
       value: Baguette
@@ -7633,6 +7649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289844287041836821, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
       propertyPath: m_Name
       value: Golem
