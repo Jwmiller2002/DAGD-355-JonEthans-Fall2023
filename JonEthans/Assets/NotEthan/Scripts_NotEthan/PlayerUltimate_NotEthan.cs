@@ -9,8 +9,8 @@ public class PlayerUltimate_NotEthan : MonoBehaviour
     private Color col;
     float cooldown;
     public bool isInvisible = false;
-    public float damageMultiplier;
-    public PlayerLevel_NotEthan levelRef;
+    public int damageMultiplier;
+    public XPManager_EthanH levelRef;
     void Start()
     {
         player = GetComponent<SpriteRenderer>();

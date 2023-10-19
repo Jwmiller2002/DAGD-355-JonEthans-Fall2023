@@ -7,7 +7,7 @@ public class PlayerLevel_NotEthan : MonoBehaviour
     public int level = 0;
     public float exp = 0;
     float neededEXP = 10;
-    public float knifeNumber = 1;
+    public int knifeNumber = 1;
     public XPManager_EthanH xpManager;
     
     // Start is called before the first frame update

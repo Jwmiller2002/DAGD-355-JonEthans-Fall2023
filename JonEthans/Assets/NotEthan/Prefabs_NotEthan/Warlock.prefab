@@ -9900,7 +9900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bleedEffect: {fileID: 6669812551673185810}
   bleedStacks: 0
-  enemyHealth: 5
+  enemyHealth: 1
   Dagger_Pickup: {fileID: 211973779832422495, guid: da1693266acdfda4c894852cf3cba1e9, type: 3}
 --- !u!95 &8636345292418844742
 Animator:

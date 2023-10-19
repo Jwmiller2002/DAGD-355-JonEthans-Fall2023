@@ -8253,11 +8253,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00d52d7a79ac9b4988bcfef168a1ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 0
   bleedChance: 0
   bleedRoll: 0
   ultRef: {fileID: 1707287845}
-  levelRef: {fileID: 1707287842}
+  levelRef: {fileID: 1707287846}
 --- !u!1 &1110842292
 GameObject:
   m_ObjectHideFlags: 0
@@ -8379,7 +8379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleportRef: {fileID: 1707287837}
-  levelRef: {fileID: 1707287842}
+  levelRef: {fileID: 0}
 --- !u!58 &1174494532
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8490,79 +8490,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238194253}
   m_CullTransparentMesh: 1
---- !u!1001 &1249456720
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4717581424163270272, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_Name
-      value: RocketBoyo
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.380944
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.6363344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4988346571194067013, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6deecb78b33719241b43f425d5c2aa5d, type: 3}
 --- !u!1 &1343355294
 GameObject:
   m_ObjectHideFlags: 0
@@ -9033,7 +8960,6 @@ GameObject:
   - component: {fileID: 1707287839}
   - component: {fileID: 1707287840}
   - component: {fileID: 1707287841}
-  - component: {fileID: 1707287842}
   - component: {fileID: 1707287844}
   - component: {fileID: 1707287843}
   - component: {fileID: 1707287845}
@@ -9198,7 +9124,7 @@ MonoBehaviour:
   bleedRange: 0
   jump: {fileID: 1707287843}
   isTeleport: 0
-  levelRef: {fileID: 1707287842}
+  levelRef: {fileID: 1707287846}
   anim: {fileID: 1707287836}
 --- !u!61 &1707287838
 BoxCollider2D:
@@ -9291,22 +9217,6 @@ MonoBehaviour:
   anim: {fileID: 1707287836}
   meleeSpeed: 0.25
   stab: {fileID: 1707287844}
---- !u!114 &1707287842
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1707287829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6998acd999779614b9d85a2d7e354e2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 0
-  exp: 0
-  knifeNumber: 1
-  xpManager: {fileID: 1707287846}
 --- !u!82 &1707287843
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9513,7 +9423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInvisible: 0
   damageMultiplier: 0
-  levelRef: {fileID: 1707287842}
+  levelRef: {fileID: 1707287846}
 --- !u!114 &1707287846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9529,6 +9439,8 @@ MonoBehaviour:
   xpBar: {fileID: 183440814}
   xpAmount: 0
   nextLevelAmount: 0
+  level: 0
+  knifeNumber: 1
 --- !u!114 &1707287847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9696,5 +9608,4 @@ SceneRoots:
   - {fileID: 127946666}
   - {fileID: 1707287831}
   - {fileID: 355888381}
-  - {fileID: 1249456720}
   - {fileID: 725118106}

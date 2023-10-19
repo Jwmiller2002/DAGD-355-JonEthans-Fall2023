@@ -9,6 +9,8 @@ public class XPManager_EthanH : MonoBehaviour
     public Image xpBar;
     public float xpAmount;
     public float nextLevelAmount;
+    public float level = 0;
+    public int knifeNumber = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,15 @@ public class XPManager_EthanH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (xpAmount >= nextLevelAmount)
+        {
+            level++;
+            ResetBar();
+        }
+        if (level == 4)
+        {
+            knifeNumber = 2;
+        }
     }
     public void GainXP(float xpGain)
     {
