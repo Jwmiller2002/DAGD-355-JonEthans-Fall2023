@@ -20,19 +20,19 @@ public class KnifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(knifeAmount == 0)
+        if(GetComponent<PlayerThrow_NotEthan>().knifeAmount == 0)
         {
             knife1.GetComponent<Image>().enabled = false;
             knife2.GetComponent<Image>().enabled = false;
             knife3.GetComponent<Image>().enabled = false;
         }
-        else if(knifeAmount == 1)
+        else if(GetComponent<PlayerThrow_NotEthan>().knifeAmount == 1)
         {
             knife1.GetComponent<Image>().enabled = true;
             knife2.GetComponent<Image>().enabled = false;
             knife3.GetComponent<Image>().enabled = false;
         }
-        else if (knifeAmount == 2)
+        else if (GetComponent<PlayerThrow_NotEthan>().knifeAmount == 2)
         {
             knife1.GetComponent<Image>().enabled = true;
             knife2.GetComponent<Image>().enabled = true;

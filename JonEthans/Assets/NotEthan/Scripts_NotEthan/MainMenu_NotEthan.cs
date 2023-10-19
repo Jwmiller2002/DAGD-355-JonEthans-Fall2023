@@ -16,7 +16,7 @@ public class MainMenu_NotEthan : MonoBehaviour
     }
     public void Bat()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
     public void Knife()
     {

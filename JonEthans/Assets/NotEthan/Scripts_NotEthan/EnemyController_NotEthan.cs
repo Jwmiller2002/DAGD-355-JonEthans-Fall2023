@@ -7,6 +7,7 @@ using UnityEngine;
 public class EnemyController_NotEthan : MonoBehaviour
 {
     public ParticleSystem bleedEffect;
+    private GameObject player;
     public float bleedStacks = 0;
     public float enemyHealth = 5;
     float bleedTime = 0;
@@ -17,7 +18,7 @@ public class EnemyController_NotEthan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class EnemyController_NotEthan : MonoBehaviour
         {            
             Destroy(gameObject);
             float itemChance = Random.Range(0, 20);
+            player.GetComponent<XPManager_EthanH>().GainXP(1f);
             if (itemChance <= 1)
             {
                 Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);

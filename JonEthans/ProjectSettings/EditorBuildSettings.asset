@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prindle/Prindle_Scenes/MAIN.unity
     guid: 62e7362e194f8e948b586cdc689782c6
+  - enabled: 1
+    path: Assets/Prindle/Prindle_Scenes/Scene_EthanH.unity
+    guid: 1994744f053953a4d83cfb9a321c5e2b
   m_configObjects: {}
