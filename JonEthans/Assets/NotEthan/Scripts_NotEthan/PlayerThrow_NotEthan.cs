@@ -7,7 +7,7 @@ public class PlayerThrow_NotEthan : MonoBehaviour
     public GameObject Throwing_Knife;
     public Transform spawnPoint;
     public int knifeAmount = 3;
-    public PlayerUltimate_NotEthan ultRef;
+    
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class PlayerThrow_NotEthan : MonoBehaviour
         
         Instantiate(Throwing_Knife,spawnPoint.position , spawnPoint.rotation);
             knifeAmount--;
-            ultRef.isInvisible = false;
+            
         }
     }
 }
