@@ -9,19 +9,19 @@ public class EP_PlayerMove : MonoBehaviour
     [SerializeField] private Animator anim;
     public float speed;
     
-    public float health = 20f;
+    public float health;
     private Vector3 oldpos;
     private Vector2 mousePos;
     public GameObject player;
     public GameObject weapon;
     private Boolean isDead =false;
     public GameObject endScreen;
-
+    public HealthManager_EthanH HP;
     // Update is called once per frame
     private void Start()
     {
         endScreen.SetActive(false);
-       
+        HP = player.GetComponent<HealthManager_EthanH>();
     }
     void Update()
     {
@@ -71,7 +71,7 @@ public class EP_PlayerMove : MonoBehaviour
             
             Destroy(other.gameObject);
             Debug.Log("Shot");
-            health -= 5;
+            HP.TakeDamage(5);
             anim.SetTrigger("hit");
             if (health <= 0)
             {
@@ -86,9 +86,9 @@ public class EP_PlayerMove : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("KABOOM");
-            health -= 10;
+            HP.TakeDamage(10);
             anim.SetTrigger("hit");
-            if (health <= 0)
+            if (HP.healthAmount<= 0)
             {
                 anim.SetTrigger("Dead");
                 anim.SetBool("isDead", true);

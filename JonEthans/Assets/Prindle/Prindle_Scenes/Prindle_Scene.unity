@@ -188,8 +188,8 @@ Transform:
   m_GameObject: {fileID: 68337566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.41758826, w: 0.9086364}
-  m_LocalPosition: {x: -0.372, y: 0.127, z: 0}
-  m_LocalScale: {x: 2.655826, y: 3.0703342, z: 0.44315}
+  m_LocalPosition: {x: -0.01, y: -0.12, z: 0}
+  m_LocalScale: {x: 3.219127, y: 3.7215521, z: 0.53714216}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 711139428}
@@ -10837,7 +10837,7 @@ Transform:
   m_GameObject: {fileID: 711139427}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 0.49, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0.07, z: 0}
   m_LocalScale: {x: 0.2697255, y: 0.2697255, z: 0.2697255}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16385,6 +16385,8 @@ GameObject:
   - component: {fileID: 1272604649}
   - component: {fileID: 1272604650}
   - component: {fileID: 1272604651}
+  - component: {fileID: 1272604653}
+  - component: {fileID: 1272604652}
   m_Layer: 0
   m_Name: Prindle_player
   m_TagString: Player
@@ -16481,6 +16483,7 @@ MonoBehaviour:
   player: {fileID: 1272604639}
   weapon: {fileID: 68337566}
   endScreen: {fileID: 981426522}
+  HP: {fileID: 1272604651}
 --- !u!95 &1272604644
 Animator:
   serializedVersion: 5
@@ -16731,8 +16734,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4991d9989a8311447a050e7b31137a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1731656337}
   healthAmount: 100
+--- !u!114 &1272604652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272604639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02c8595dc9c72445b04961cd7f5f07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife1: {fileID: 1936086050}
+  knife2: {fileID: 2085951425}
+  knife3: {fileID: 492513758}
+  knifeAmount: 0
+--- !u!114 &1272604653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272604639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b0f49de8a42c049b65962229859459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpBar: {fileID: 940285909}
+  xpAmount: 0
+  nextLevelAmount: 0
 --- !u!1 &1288288289
 GameObject:
   m_ObjectHideFlags: 0
@@ -17275,7 +17309,7 @@ Transform:
   m_GameObject: {fileID: 1664553169}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.37, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17439,8 +17473,8 @@ Transform:
   m_GameObject: {fileID: 1794582429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.8002155, w: 0.59971267}
-  m_LocalPosition: {x: 0.42, y: 0.44, z: 0}
-  m_LocalScale: {x: 0.21334, y: 0.21334, z: 0.21334}
+  m_LocalPosition: {x: 0.47, y: 0.459, z: 0}
+  m_LocalScale: {x: 0.3151672, y: 0.3151672, z: 0.3151672}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 506411876}
