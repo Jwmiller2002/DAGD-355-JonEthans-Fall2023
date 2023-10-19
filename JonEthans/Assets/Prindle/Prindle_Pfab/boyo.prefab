@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4518040081991194294}
   m_Layer: 0
   m_Name: boyo
-  m_TagString: Enemy
+  m_TagString: Ethan2_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109bdfaee8d372445b931ebcd275dda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &1991856193179973919
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +62,7 @@ GameObject:
   - component: {fileID: 3128856687008867967}
   m_Layer: 6
   m_Name: Golem
-  m_TagString: Enemy
+  m_TagString: EthanH_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -196,7 +195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 8023872677582594594}
   bulletPrefab: {fileID: 6794420892355572686, guid: 4aebf16d9e401c94ab2c6b9275f5a43e, type: 3}
-  player: {fileID: 0}
   trail: {fileID: 7474913644199406972}
   bulletPos: {fileID: 1982893158987014544}
   knockedBackCD: 0

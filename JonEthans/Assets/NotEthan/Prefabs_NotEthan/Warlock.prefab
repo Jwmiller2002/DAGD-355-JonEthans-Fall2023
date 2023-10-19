@@ -9739,7 +9739,7 @@ GameObject:
   - component: {fileID: 8636345292418844742}
   m_Layer: 0
   m_Name: Warlock
-  m_TagString: Enemy
+  m_TagString: notEthan_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

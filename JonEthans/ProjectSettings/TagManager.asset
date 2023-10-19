@@ -16,6 +16,8 @@ TagManager:
   - notEthan_Enemy
   - Ethan2_Enemy
   - EthanH_Enemy
+  - EthanH_Bullet
+  - Ethan2_Bullet
   layers:
   - Default
   - TransparentFX
