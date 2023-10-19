@@ -8,7 +8,9 @@ public class EnemyController_NotEthan : MonoBehaviour
 {
     public ParticleSystem bleedEffect;
     public float bleedStacks = 0;
-    public float enemyHealth = 2;
+    public float enemyHealth = 5;
+    float bleedTime = 0;
+    public GameObject Dagger_Pickup;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,34 +23,42 @@ public class EnemyController_NotEthan : MonoBehaviour
         if (bleedStacks > 0)
         {
             Bleed();
+            bleedParticle();
         }
         if (enemyHealth <= 0f)
-        {
-            GetComponent<PlayerLevel_NotEthan>().exp += 2;
+        {            
             Destroy(gameObject);
-            
+            float itemChance = Random.Range(0, 20);
+            if (itemChance <= 1)
+            {
+                Instantiate(Dagger_Pickup, transform.position, Quaternion.identity);
+            }
         }
 
     }
 
     public void Bleed()
     {
-        float bleedDamage = 1;
-        float bleedTime = 10;
+        float bleedDamage = 1;        
         bleedTime -= Time.deltaTime;
         if (bleedTime <= 0)
         {
             enemyHealth -= bleedDamage * bleedStacks;
             bleedTime = 10;
-            Debug.Log("BLEED DAMAGE");
+            bleedParticle();
         }
-        bleedEffect.Play();
+        
         
     }
 
     public void TakeDamage(float damage) 
     {
         enemyHealth -= damage;
+    }
+
+    void bleedParticle()
+    {
+        bleedEffect.Play();
     }
 
 }

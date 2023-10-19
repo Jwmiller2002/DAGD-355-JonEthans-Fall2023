@@ -13,6 +13,7 @@ public class ThrowKnifeController_NotEthan : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * knifeSpeed;
+        
     }
 
     // Update is called once per frame

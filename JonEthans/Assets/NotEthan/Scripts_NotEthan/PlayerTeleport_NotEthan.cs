@@ -9,6 +9,8 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     float timeUntilTeleport;
     public float bleedRange = 0.5f;
     public AudioSource jump;
+    public bool isTeleport = false;
+    public PlayerLevel_NotEthan levelRef;
 
     Vector3 mousePos;
     Vector2 pos = new Vector2(0f, 0f);
@@ -25,11 +27,10 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
     {
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
-        pos = mousePos;
-
+        pos = mousePos;       
         if (timeUntilTeleport <= 0f)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) && levelRef.level >= 1)
             {
                 teleport();
             }
@@ -37,11 +38,12 @@ public class PlayerTeleport_NotEthan : MonoBehaviour
         else
         {
             timeUntilTeleport -= Time.deltaTime;
-        }
+        }        
     }
 
     void teleport()
     {
+        isTeleport = true;
         transform.position = pos;
         anim.SetTrigger("Teleport");
         timeUntilTeleport = teleportCooldown;
