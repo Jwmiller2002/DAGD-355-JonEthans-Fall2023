@@ -102,7 +102,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Enemy")
+        if(other.tag == "Ethan2_Enemy")
         {
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             
