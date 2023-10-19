@@ -20,8 +20,11 @@ public class KnifePickUp_NotEthan : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.GetComponent<PlayerThrow_NotEthan>().knifeAmount++;
-            Destroy(gameObject);
+            if (other.GetComponent<PlayerThrow_NotEthan>().knifeAmount < 3)
+            {
+                other.GetComponent<PlayerThrow_NotEthan>().knifeAmount++;
+                Destroy(gameObject);
+            }
         }
     }
 }

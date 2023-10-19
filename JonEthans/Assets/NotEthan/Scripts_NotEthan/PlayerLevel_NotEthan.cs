@@ -8,6 +8,7 @@ public class PlayerLevel_NotEthan : MonoBehaviour
     public float exp = 0;
     float neededEXP = 10;
     public float knifeNumber = 1;
+    public XPManager_EthanH xpManager;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class PlayerLevel_NotEthan : MonoBehaviour
         if (exp >= neededEXP)
         {
             level++;
+            xpManager.ResetBar();
             neededEXP = neededEXP * 2;
             exp = 0;
             if (level == 4)
@@ -33,5 +35,7 @@ public class PlayerLevel_NotEthan : MonoBehaviour
     public void addXP(int xp)
     {
         exp += xp;
+        xpManager.GainXP(xp);
+
     }
 }

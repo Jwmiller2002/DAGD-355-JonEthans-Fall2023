@@ -12,6 +12,8 @@ TagManager:
   - attackpowerup
   - rocketBoy
   - Rocket
+  - BuffArea
+  - ThrowingKnife
   layers:
   - Default
   - TransparentFX
