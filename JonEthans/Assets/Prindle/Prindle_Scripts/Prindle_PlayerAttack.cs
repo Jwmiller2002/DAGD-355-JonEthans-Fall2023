@@ -19,7 +19,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     AudioSource aud;
     public AudioClip hit, tact, ult;
 
-
+    
     Boolean attackPowerUp = false;
     Boolean gotAttackPowerup = false;
     float attackPowerUpDuration = 10;
@@ -27,6 +27,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        
         aud = GetComponent<AudioSource>();
         level = player.GetComponent<Prindle_PlayerLevel>();
         score = scoreText.GetComponent<Score>();
