@@ -8,6 +8,7 @@ public class ThrowKnifeController_NotEthan : MonoBehaviour
     public Rigidbody2D rb;
     public float lifespan;
     public float damage = 5;
+    public int EthanHDamage = 5;
 
     void Start()
     {
@@ -28,11 +29,21 @@ public class ThrowKnifeController_NotEthan : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "EthanH_Enemy")
+        {
+            other.GetComponent<Golem_EthanH>().takeDamage(EthanHDamage);
+            Destroy(gameObject);
+        }
+        if (other.tag == "Ethan2_Enemy")
+        {
+            other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        if (other.tag == "notEthan_Enemy")
         {
             other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
             Destroy(gameObject);
         }
-        
+
     }
 }
