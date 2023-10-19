@@ -73,7 +73,7 @@ public class EP_PlayerMove : MonoBehaviour
             Debug.Log("Shot");
             HP.TakeDamage(5);
             anim.SetTrigger("hit");
-            if (health <= 0)
+            if (HP.healthAmount <= 0)
             {
                 anim.SetTrigger("Dead");
                 anim.SetBool("isDead",true);
@@ -89,6 +89,22 @@ public class EP_PlayerMove : MonoBehaviour
             HP.TakeDamage(10);
             anim.SetTrigger("hit");
             if (HP.healthAmount<= 0)
+            {
+                anim.SetTrigger("Dead");
+                anim.SetBool("isDead", true);
+                isDead = true;
+                //Destroy(gameObject);
+
+            }
+        }
+        if (other.gameObject.CompareTag("") && isDead == false)
+        {
+
+            Destroy(other.gameObject);
+            Debug.Log("Shot");
+            HP.TakeDamage(5);
+            anim.SetTrigger("hit");
+            if (HP.healthAmount <= 0)
             {
                 anim.SetTrigger("Dead");
                 anim.SetBool("isDead", true);
