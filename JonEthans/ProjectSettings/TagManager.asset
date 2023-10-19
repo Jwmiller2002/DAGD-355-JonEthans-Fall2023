@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
   - Bullet
   - Ultimate
   - Tacticle
@@ -14,6 +13,9 @@ TagManager:
   - Rocket
   - BuffArea
   - ThrowingKnife
+  - notEthan_Enemy
+  - Ethan2_Enemy
+  - EthanH_Enemy
   layers:
   - Default
   - TransparentFX
