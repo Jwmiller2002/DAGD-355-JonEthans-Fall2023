@@ -104,7 +104,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         if(other.tag == "Enemy")
         {
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
-            level.xpNeeded -= 2;
+            
             score.playerscore += 35;
             Debug.Log("Enemy Hit");
             aud.Play();
