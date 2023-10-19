@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 {
     [Range(1,10)]
     public float bulletSpeed =30f;
+    public float returnSpeed;
     public Boolean isRocket =false;
     [SerializeField] float lifeTime =3F;
     private Rigidbody2D rb;
@@ -36,5 +37,10 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.up * bulletSpeed;
     }
-    
+
+    public void Deflect(Vector2 direction)
+    {
+        rb.velocity = direction * returnSpeed;
+    }
+
 }

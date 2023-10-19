@@ -163,7 +163,10 @@ public class PlayerAttack_EthanH : MonoBehaviour
         {
             if(level >= 5)
             {
-                //Deflect()
+                Vector3 mousePosition = Input.mousePosition;
+                mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+                Vector2 direction = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+                other.GetComponent<Bullet>().Deflect(direction);
             }
             else 
             { 
