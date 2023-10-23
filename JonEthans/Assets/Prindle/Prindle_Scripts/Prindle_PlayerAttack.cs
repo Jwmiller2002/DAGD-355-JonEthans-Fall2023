@@ -105,7 +105,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         if(other.tag == "Ethan2_Enemy")
         {
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
-            
+            other.GetComponent<Prindle_Enemy>().hammerStun(level.stunAmmount);
             score.playerscore += 35;
             Debug.Log("Enemy Hit");
             aud.Play();
@@ -114,7 +114,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         {
             xp.GainXP(1);
             other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
-            score.playerscore += 15;
+            score.playerscore += 5;
             Debug.Log("Enemy Hit");
             aud.Play();
         }
@@ -122,6 +122,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         {
             other.GetComponent<Golem_EthanH>().takeDamage((int)damage);
             other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
+            other.GetComponent<Golem_EthanH>().hammerStun(level.stunAmmount);
             score.playerscore += 15;
             Debug.Log("Enemy Hit");
             aud.Play();

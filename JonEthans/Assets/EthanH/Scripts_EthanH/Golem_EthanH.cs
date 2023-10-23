@@ -111,7 +111,10 @@ public class Golem_EthanH : MonoBehaviour
     {
         health -= damage;
     }
-
+    public void hammerStun(float stun)
+    {
+        fireRate += stun;
+    }
     public void knockback(float returnSpeed)
     {
         Vector3 mousePosition = Input.mousePosition;

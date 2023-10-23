@@ -109,9 +109,6 @@ public class Prindle_Enemy : MonoBehaviour
     }
     private void GetTarget()
     {
-
-
-
         if (GameObject.FindGameObjectWithTag("Player"))
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -147,6 +144,11 @@ public class Prindle_Enemy : MonoBehaviour
 
             }
         }
+    }
+
+    public void hammerStun(float stun)
+    {
+        timeToFire += stun;
     }
 
     public void knockback(float returnSpeed)

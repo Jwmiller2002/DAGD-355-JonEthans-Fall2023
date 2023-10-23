@@ -65,7 +65,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
             case 2:
                 print("level2");
                 canstun = true;
-                stunAmmount = 1;
+                stunAmmount = 0.5f;
                 weaponSpeed =3f;
                 break;
             case 3:
@@ -85,6 +85,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 break;
             case 7:
                 anim.SetBool("smallSwing", false);
+                stunAmmount = 1f;
                 weaponSpeed = 2;
                 break;
             case 8:
@@ -102,6 +103,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 tactStun = 8;
                 ultSlow = 10;
                 weaponSpeed = 1f;
+                stunAmmount = 2f;
                 print("MAX");
                 break;
         }
