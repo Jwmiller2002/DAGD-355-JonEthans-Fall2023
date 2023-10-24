@@ -22,7 +22,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health > 0)
+        if (GetComponent<HealthManager_EthanH>().healthAmount > 0)
         {
             Vector3 pos = transform.position;
 
