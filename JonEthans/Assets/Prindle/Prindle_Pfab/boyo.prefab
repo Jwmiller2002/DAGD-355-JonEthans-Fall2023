@@ -327,7 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   target: {fileID: 6123529363973401409}
-  speed: 33
+  speed: 1.5
   rotateSpeed: 1
   anim: {fileID: 0}
   fireRate: 3

@@ -86,11 +86,13 @@ public class Prindle_Enemy : MonoBehaviour
     private void FixedUpdate()
     {   if (target != null)
         {
+            print("hasTarget");
             GetTarget();
             if (Vector2.Distance(target.position, transform.position) >= distanceToStop)
             {
                 GetTarget();
-                rb.velocity = transform.up * speed *Time.deltaTime;
+                transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+                print("hasTargetNMOVE");
             }
             else
             {
