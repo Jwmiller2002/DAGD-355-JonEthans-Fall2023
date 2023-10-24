@@ -165,10 +165,10 @@ public class Prindle_Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        print("playernotother");
+        print("particleHit");
         if (other.tag == "Ultimate")
         {
-            print("ultTTTT");
+            print("ult2");
             slowed = true;
             if (level.ultBuff)
             {

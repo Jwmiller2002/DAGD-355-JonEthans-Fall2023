@@ -720,7 +720,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 414986125}
@@ -10098,7 +10098,6 @@ MonoBehaviour:
   Throwing_Knife: {fileID: 4313263069899179086, guid: 6a916825fb7408348af5019fca4d2c73, type: 3}
   spawnPoint: {fileID: 1114420724}
   knifeAmount: 3
-  ultRef: {fileID: 0}
 --- !u!1 &1672532504
 GameObject:
   m_ObjectHideFlags: 0
