@@ -10,6 +10,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
     [SerializeField] public Animator anim;
     public AudioSource bread;
     private Rigidbody2D rb;
+    public GameObject endScreen;
     public int health = 100;
     public float speed = 5f;
 
@@ -17,6 +18,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        endScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
         else
         {
             anim.SetTrigger("Dead");
+            endScreen.SetActive(true);
         }
 
         if (Input.GetKeyDown("space"))
