@@ -28,13 +28,13 @@ public class hitEnemy : MonoBehaviour
         {
             print("abilityHit");
             abilHit = false;
-            other.GetComponent<Prindle_Enemy>().abilityHit(abilHit);
+            other.GetComponent<Golem_EthanH>().abilityHit(abilHit);
         }
         if (other.tag == "EthanH_Enemy" && this.tag == "Ultimate")
         {
             print("ULTHIT");
             abilHit = true;
-            other.GetComponent<Prindle_Enemy>().abilityHit(abilHit);
+            other.GetComponent<Golem_EthanH>().abilityHit(abilHit);
         }
     }
 }

@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class Golem_EthanH : MonoBehaviour
 {
@@ -19,6 +22,9 @@ public class Golem_EthanH : MonoBehaviour
     public GameObject Dagger_Pickup;
     public GameObject Bread_Pickup;
     public GameObject Grind_Pickup;
+    public Prindle_PlayerLevel level;
+    private Boolean stunned = false;
+    private Boolean slowed = false;
 
     float horizontalInput;
     float verticalInput;
@@ -30,11 +36,25 @@ public class Golem_EthanH : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
+        level = player.GetComponent<Prindle_PlayerLevel>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //prindle stun code
+        if (stunned)
+        {
+            fireRate += level.tactStun;
+            stunned = false;
+        }
+        if (slowed)
+        {
+            speed -= level.ultSlow;
+            slowed = false;
+        }
+
+
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
@@ -128,6 +148,26 @@ public class Golem_EthanH : MonoBehaviour
     private void Fire()
     {
         Instantiate(bulletPrefab, bulletPos.position, Quaternion.identity);
+    }
+    public void abilityHit(Boolean ultHit)
+    {
+        print("particleHit");
+        if (ultHit)
+        {
+            print("ult2");
+            slowed = true;
+            if (level.ultBuff)
+            {
+                stunned = true;
+            }
+
+        }
+        if (ultHit == false)
+        {
+            print("tact");
+            stunned = true;
+        }
+
     }
 
 }
