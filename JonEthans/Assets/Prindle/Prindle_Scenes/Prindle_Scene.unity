@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 19140421}
   - component: {fileID: 19140420}
   - component: {fileID: 19140422}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TactSmolHitbox
   m_TagString: Tacticle
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 32150594}
   - component: {fileID: 32150593}
   - component: {fileID: 32150595}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TactBIGHitbox
   m_TagString: Tacticle
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 68337567}
   - component: {fileID: 68337568}
   - component: {fileID: 68337570}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GFX HAMMerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 412852630}
   - component: {fileID: 412852629}
   - component: {fileID: 412852628}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ULTIMATE
   m_TagString: Ultimate
   m_Icon: {fileID: 0}
@@ -6008,7 +6008,7 @@ GameObject:
   - component: {fileID: 506411876}
   - component: {fileID: 506411878}
   - component: {fileID: 506411877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GFX HAMMerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6186,7 +6186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 523390690}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knife aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6255,7 +6255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711139428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HammerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6487,7 +6487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 892344657}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Tacticle
   m_TagString: Tacticle
   m_Icon: {fileID: 0}
@@ -6937,7 +6937,7 @@ GameObject:
   - component: {fileID: 1272604654}
   - component: {fileID: 1272604656}
   - component: {fileID: 1272604655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Prindle_player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7501,7 +7501,7 @@ GameObject:
   - component: {fileID: 1290738854}
   - component: {fileID: 1290738853}
   - component: {fileID: 1290738852}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tactBlastBig
   m_TagString: Tacticle
   m_Icon: {fileID: 0}
@@ -12389,7 +12389,7 @@ GameObject:
   - component: {fileID: 1346465095}
   - component: {fileID: 1346465097}
   - component: {fileID: 1346465098}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: UltHitbox
   m_TagString: Ultimate
   m_Icon: {fileID: 0}
@@ -12520,7 +12520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1381194032}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: ult2
   m_TagString: Ultimate
   m_Icon: {fileID: 0}
@@ -12552,7 +12552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1442055243}
-  m_Layer: 1
+  m_Layer: 6
   m_Name: ULT
   m_TagString: Ultimate
   m_Icon: {fileID: 0}
@@ -12819,7 +12819,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1664553170}
   - component: {fileID: 1664553171}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RHammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12864,7 +12864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665911344}
   - component: {fileID: 1665911345}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12909,7 +12909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1684864715}
   - component: {fileID: 1684864716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LHammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12955,7 +12955,7 @@ GameObject:
   - component: {fileID: 1727155277}
   - component: {fileID: 1727155276}
   - component: {fileID: 1727155275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tactBlastSmol
   m_TagString: Tacticle
   m_Icon: {fileID: 0}
@@ -17915,7 +17915,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1794582430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HammerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20589,7 +20589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2090727469}
   - component: {fileID: 2090727470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tact2
   m_TagString: Tacticle
   m_Icon: {fileID: 0}

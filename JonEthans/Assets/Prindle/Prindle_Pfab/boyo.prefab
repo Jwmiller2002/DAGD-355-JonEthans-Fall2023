@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7469972482841484522}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3166983431189891036}
   - component: {fileID: 3296226856693052421}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6336344087510368427}
   - component: {fileID: 7799258781837451060}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: knockbackTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 254397366848205527}
   - component: {fileID: 371061553492187532}
   - component: {fileID: 4518040081991194294}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: boyo
   m_TagString: Ethan2_Enemy
   m_Icon: {fileID: 0}
@@ -359,7 +359,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -449,7 +449,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6123529363973401409}
   - component: {fileID: 6317027571530806841}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
