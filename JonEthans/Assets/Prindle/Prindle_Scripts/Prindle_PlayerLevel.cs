@@ -19,8 +19,8 @@ public class Prindle_PlayerLevel : MonoBehaviour
     public float tactTimer =8;
     public float ultTimer=12;
 
-    public float ultSlow;
-    public float tactStun;
+    public float ultSlow =4;
+    public float tactStun =3;
     public Boolean ultBuff =false;
     public GameObject player;
     public XPManager_EthanH xp;
