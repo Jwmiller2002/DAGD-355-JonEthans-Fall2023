@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class enemySpawning : MonoBehaviour
 {
@@ -10,31 +12,54 @@ public class enemySpawning : MonoBehaviour
     public GameObject strongEnemy;
     public GameObject supportEnemy;
     public GameObject spawner;
-    [SerializeField] private float basicSpawnTimerMax;
-    [SerializeField] private float rocketSpawnTimerMax;
-    [SerializeField] private float supportEnemyTimerMax;
-    [SerializeField] private float strongEnemyTimerMax;
+
+    private float basicSpawnTimerMax;
+    private float rocketSpawnTimerMax;
+    private float supportEnemyTimerMax;
+    private float strongEnemyTimerMax;
+
     private float basicSpawnTimer = 0f;
     private float rocketSpawnTimer = 10f;
-    private float supportEnemyTimer = 10f;
+    private float supportEnemyTimer = 8f;
     private float strongEnemyTimer = 5f;
     
-    [SerializeField] private float MaxEnemies =1f;
-    [SerializeField] private float MaxEnemiesrocketMan=2f;
-    private float numBasicEnemies =2f;
+    private float MaxEnemies =2f;
+    private float MaxEnemiesrocketMan=1f;
+    private float MaxStrongEnemies = 0f;
+    private float MaxSupportEnemies = 0f;
+
+    private float numBasicEnemies =0f;
     private float numRocketEnemies =0f;
+    private float numStrongEnemy = 0f;
+    private float numSupportEnemy = 0f;
+    
     private float difficultyIncrease =30;
+    private float difficultyMultiplier = 1;
+    private float multIncreaseTimer = 0f;
+
+    public Boolean xAxis;
     // Update is called once per frame
     void Update()
     {
         if (basicSpawnTimer <= 0 && numBasicEnemies <= MaxEnemies)
         {
-            basicSpawnTimerMax = Random.Range(1, 5);
+            basicSpawnTimerMax = Random.Range(2, 5);
             basicSpawnTimer = basicSpawnTimerMax;
             //print("SPAWNED");
-            Vector3 spawnlocation = spawner.transform.position;
+            //spawning on a random x or y axis
+            
             Quaternion spawnRotation = spawner.transform.rotation;
-            Instantiate(basicEnemy, spawnlocation, spawnRotation);
+            if (xAxis)
+            {
+                Vector3 spawnlocation = new Vector3(spawner.transform.position.x, Random.Range(0,55), 0);
+                Instantiate(basicEnemy, spawnlocation, spawnRotation);
+            }
+            else
+            {
+                Vector3 spawnlocation = new Vector3(Random.Range(-50, 50), spawner.transform.position.y, 0);
+                Instantiate(basicEnemy, spawnlocation, spawnRotation);
+            }
+            
             numBasicEnemies+=1f;
         }
         else
@@ -48,9 +73,19 @@ public class enemySpawning : MonoBehaviour
             rocketSpawnTimerMax = Random.Range(10, 15);
             rocketSpawnTimer = rocketSpawnTimerMax;
             //print("SPAWNED");
-            Vector3 spawnlocation = spawner.transform.position;
+            
             Quaternion spawnRotation = spawner.transform.rotation;
-            Instantiate(rocketEnemy, spawnlocation, spawnRotation);
+            if (xAxis)
+            {
+                Vector3 spawnlocation = new Vector3(spawner.transform.position.x, Random.Range(0, 55), 0);
+                Instantiate(rocketEnemy, spawnlocation, spawnRotation);
+            }
+            else
+            {
+                Vector3 spawnlocation = new Vector3(Random.Range(-50, 50), spawner.transform.position.y, 0);
+                Instantiate(rocketEnemy, spawnlocation, spawnRotation);
+            }
+            
             numRocketEnemies+=1;
             
         }
@@ -59,27 +94,47 @@ public class enemySpawning : MonoBehaviour
             rocketSpawnTimer -= Time.deltaTime;
             //print(rocketSpawnTimer);
         }
-        if (supportEnemyTimer <= 0)
+        if (supportEnemyTimer <= 0 &&numSupportEnemy < MaxSupportEnemies)
         {
-            supportEnemyTimerMax = Random.Range(10, 15);
+            supportEnemyTimerMax = Random.Range(5, 15);
             supportEnemyTimer = supportEnemyTimerMax;
-            Vector3 spawnlocation = spawner.transform.position;
+            
             Quaternion spawnRotation = spawner.transform.rotation;
-            Instantiate(supportEnemy, spawnlocation, spawnRotation);
-
+            if (xAxis)
+            {
+                Vector3 spawnlocation = new Vector3(spawner.transform.position.x, Random.Range(0, 55), 0);
+                Instantiate(supportEnemy, spawnlocation, spawnRotation);
+            }
+            else
+            {
+                Vector3 spawnlocation = new Vector3(Random.Range(-50, 50), spawner.transform.position.y, 0);
+                Instantiate(supportEnemy, spawnlocation, spawnRotation);
+            }
+            
+            numSupportEnemy++;
         }
         else
         {
             supportEnemyTimer -= Time.deltaTime;
         }
-        if (strongEnemyTimer <= 0)
+        if (strongEnemyTimer <= 0 && numStrongEnemy <MaxStrongEnemies)
         {
             strongEnemyTimerMax = Random.Range(5, 10);
             strongEnemyTimer = strongEnemyTimerMax;
-            Vector3 spawnlocation = spawner.transform.position;
+            
             Quaternion spawnRotation = spawner.transform.rotation;
-            Instantiate(strongEnemy, spawnlocation, spawnRotation);
-
+            if (xAxis)
+            {
+                Vector3 spawnlocation = new Vector3(spawner.transform.position.x, Random.Range(0, 55), 0);
+                Instantiate(strongEnemy, spawnlocation, spawnRotation);
+            }
+            else
+            {
+                Vector3 spawnlocation = new Vector3(Random.Range(-50, 50), spawner.transform.position.y, 0);
+                Instantiate(strongEnemy, spawnlocation, spawnRotation);
+            }
+            
+            numStrongEnemy++;
         }
         else
         {
@@ -88,8 +143,17 @@ public class enemySpawning : MonoBehaviour
 
         if (difficultyIncrease <= 0)
         {
-            MaxEnemies += 5;
-            MaxEnemiesrocketMan += 2;
+            MaxEnemies += 2 * difficultyMultiplier;
+            MaxEnemiesrocketMan += 2 * difficultyMultiplier;
+            MaxSupportEnemies += 2 * difficultyMultiplier;
+            MaxStrongEnemies += 1 *difficultyMultiplier;
+
+            multIncreaseTimer++;
+            if(multIncreaseTimer % 5 == 0)
+            {
+                difficultyMultiplier++;
+            }
+
         }
         else
         {

@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 291536995}
   - component: {fileID: 291536994}
   m_Layer: 0
-  m_Name: spawner LEFT
+  m_Name: spawner Left
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -526,12 +526,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 291536993}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 1
 --- !u!4 &291536995
 Transform:
   m_ObjectHideFlags: 0
@@ -5784,7 +5779,7 @@ GameObject:
   - component: {fileID: 916682865}
   - component: {fileID: 916682864}
   m_Layer: 0
-  m_Name: spawnerLeft
+  m_Name: spawnerRight
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5807,12 +5802,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 916682863}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 1
 --- !u!4 &916682865
 Transform:
   m_ObjectHideFlags: 0
@@ -8733,12 +8723,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 1442973640}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 0
 --- !u!4 &1442973642
 Transform:
   m_ObjectHideFlags: 0
@@ -9201,7 +9186,6 @@ MonoBehaviour:
   Throwing_Knife: {fileID: 4313263069899179086, guid: 6a916825fb7408348af5019fca4d2c73, type: 3}
   spawnPoint: {fileID: 756934974}
   knifeAmount: 3
-  ultRef: {fileID: 1707287845}
 --- !u!114 &1707287841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9505,12 +9489,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 1921675446}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 0
 --- !u!4 &1921675448
 Transform:
   m_ObjectHideFlags: 0

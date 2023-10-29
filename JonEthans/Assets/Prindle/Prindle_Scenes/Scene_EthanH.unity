@@ -780,12 +780,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 410246387}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 0
 --- !u!1 &414986124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8055,7 +8050,7 @@ GameObject:
   - component: {fileID: 516170421}
   - component: {fileID: 516170422}
   m_Layer: 0
-  m_Name: spawnerLeft
+  m_Name: spawnerRight
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -8093,12 +8088,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 516170420}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 1
 --- !u!1 &540146240
 GameObject:
   m_ObjectHideFlags: 0
@@ -8368,12 +8358,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 729139005}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 0
 --- !u!1001 &740323221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8671,12 +8656,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 813069647}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 1
 --- !u!1 &898855340
 GameObject:
   m_ObjectHideFlags: 0

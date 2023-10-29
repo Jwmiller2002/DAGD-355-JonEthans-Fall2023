@@ -452,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -771.39996, y: 301}
+  m_AnchoredPosition: {x: -771.39996, y: 363}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &68337566
@@ -781,63 +781,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &245942253
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3681286350574144282, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_Name
-      value: Baguette
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4341540653570426548, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 00a6795a15ad46a4e82abd0282b0aea7, type: 3}
 --- !u!1 &301613609
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,12 +6176,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 522018985}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 1
 --- !u!1 &523390689
 GameObject:
   m_ObjectHideFlags: 0
@@ -6305,7 +6243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -620, y: 382}
+  m_AnchoredPosition: {x: -620, y: 444}
   m_SizeDelta: {x: 600, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &711139427
@@ -12686,12 +12624,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 1457188930}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 0
 --- !u!1 &1592232276
 GameObject:
   m_ObjectHideFlags: 0
@@ -12703,7 +12636,7 @@ GameObject:
   - component: {fileID: 1592232277}
   - component: {fileID: 1592232278}
   m_Layer: 0
-  m_Name: spawnerLeft
+  m_Name: spawnerRight
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -12741,12 +12674,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 1592232276}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 1
 --- !u!1 &1600855227
 GameObject:
   m_ObjectHideFlags: 0
@@ -20745,12 +20673,7 @@ MonoBehaviour:
   strongEnemy: {fileID: 1991856193179973919, guid: e9352383d82acf940b35127718b0ce3a, type: 3}
   supportEnemy: {fileID: 7862348793822468297, guid: 6d03139314337134a9973c469b4b4c1b, type: 3}
   spawner: {fileID: 2094283435}
-  basicSpawnTimerMax: 5
-  rocketSpawnTimerMax: 10
-  supportEnemyTimerMax: 0
-  strongEnemyTimerMax: 0
-  MaxEnemies: 2
-  MaxEnemiesrocketMan: 1
+  xAxis: 0
 --- !u!1 &2094681181
 GameObject:
   m_ObjectHideFlags: 0
@@ -20787,7 +20710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -880.8, y: 211.99998}
+  m_AnchoredPosition: {x: -880.8, y: 273.99997}
   m_SizeDelta: {x: 100, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2105277784
@@ -20979,4 +20902,3 @@ SceneRoots:
   - {fileID: 153765904}
   - {fileID: 436142622}
   - {fileID: 76249312}
-  - {fileID: 245942253}
