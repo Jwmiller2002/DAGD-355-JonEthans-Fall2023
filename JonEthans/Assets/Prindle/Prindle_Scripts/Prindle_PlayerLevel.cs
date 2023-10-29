@@ -33,10 +33,11 @@ public class Prindle_PlayerLevel : MonoBehaviour
     void Update()
     {
         level = xp.level;
+
         if (Input.GetKeyDown("r") && level <10)
         {
-            level += 10;
-            //print("d");
+            xp.level = 10;
+            level = 10;
         }
         /*
         if(xpNeeded <= 0)

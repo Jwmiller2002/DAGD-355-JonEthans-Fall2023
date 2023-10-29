@@ -8,13 +8,13 @@ public class Prindle_PlayerAttack : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private Animator anim;
-    [SerializeField] private float meleeSpeeed;
+    private float meleeSpeeed;
     [SerializeField] private float damage =10;
     public Prindle_PlayerLevel level;
     public GameObject player;
     float timeUntilMelee =0f;
-    public float ultiTimer =1f;
-    public float tacttTimer =1f;
+    private float ultiTimer =1f;
+    private float tacttTimer =1f;
     public GameObject scoreText;
     private Score score;
     AudioSource aud;
