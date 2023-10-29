@@ -86,13 +86,13 @@ public class Prindle_Enemy : MonoBehaviour
     private void FixedUpdate()
     {   if (target != null)
         {
-            print("hasTarget");
+            //print("hasTarget");
             GetTarget();
             if (Vector2.Distance(target.position, transform.position) >= distanceToStop)
             {
                 GetTarget();
                 transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-                print("hasTargetNMOVE");
+                //print("hasTargetNMOVE");
             }
             else
             {
@@ -124,7 +124,7 @@ public class Prindle_Enemy : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
-            Debug.Log("died");
+            //Debug.Log("died");
             xp.GainXP(xpGiven);
             float itemChance = Random.Range(0, 20);
             player.GetComponent<XPManager_EthanH>().GainXP(1f);

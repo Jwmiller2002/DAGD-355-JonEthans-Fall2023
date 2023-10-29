@@ -16,8 +16,8 @@ public class Prindle_PlayerLevel : MonoBehaviour
     public Boolean canTact =false;
     public Boolean canUlt =false;
 
-    public float tactTimer;
-    public float ultTimer;
+    public float tactTimer =8;
+    public float ultTimer=12;
 
     public float ultSlow;
     public float tactStun;
@@ -35,8 +35,8 @@ public class Prindle_PlayerLevel : MonoBehaviour
         level = xp.level;
         if (Input.GetKeyDown("r") && level <10)
         {
-            level += 1;
-            print("d");
+            level += 10;
+            //print("d");
         }
         /*
         if(xpNeeded <= 0)
@@ -47,25 +47,26 @@ public class Prindle_PlayerLevel : MonoBehaviour
             print("levelUP");
         }
         */
-        print("current"+level);
+        //print("current"+level);
         
         switch (level)
         {
             case 0:
-                print("level0");
+                //print("level0");
                 weaponSpeed = 3.5f;
                 break;
             case 1:
-                print("level1");
+                //print("level1");
                 canTact = true;
                 tactTimer = 8;
                 tactStun = 3;
                 
                 break;
             case 2:
-                print("level2");
+                //print("level2");
                 canstun = true;
                 stunAmmount = 0.5f;
+                //print(stunAmmount);
                 weaponSpeed =3f;
                 break;
             case 3:
@@ -105,6 +106,7 @@ public class Prindle_PlayerLevel : MonoBehaviour
                 weaponSpeed = 1f;
                 stunAmmount = 2f;
                 print("MAX");
+                print(weaponSpeed);
                 break;
         }
     }

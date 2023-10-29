@@ -71,7 +71,7 @@ public class EP_PlayerMove : MonoBehaviour
         {
             
             Destroy(other.gameObject);
-            Debug.Log("Shot");
+            //Debug.Log("Shot");
             HP.TakeDamage(5);
             anim.SetTrigger("hit");
             if (HP.healthAmount <= 0)
@@ -87,7 +87,7 @@ public class EP_PlayerMove : MonoBehaviour
         {
             //anim2.SetTrigger("explode");
             Destroy(other.gameObject);
-            Debug.Log("KABOOM");
+            //Debug.Log("KABOOM");
             HP.TakeDamage(10);
             anim.SetTrigger("hit");
             if (HP.healthAmount<= 0)

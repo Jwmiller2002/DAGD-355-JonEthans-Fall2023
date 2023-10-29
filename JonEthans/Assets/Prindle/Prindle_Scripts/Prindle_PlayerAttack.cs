@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Prindle_PlayerAttack : MonoBehaviour
@@ -12,14 +13,14 @@ public class Prindle_PlayerAttack : MonoBehaviour
     public Prindle_PlayerLevel level;
     public GameObject player;
     float timeUntilMelee =0f;
-    public float ultiTimer =0f;
-    public float tacttTimer =0f;
+    public float ultiTimer =1f;
+    public float tacttTimer =1f;
     public GameObject scoreText;
     private Score score;
     AudioSource aud;
     public AudioClip hit, tact, ult;
     public XPManager_EthanH xp;
-    
+    public Boolean swung =false;
     Boolean attackPowerUp = false;
     Boolean gotAttackPowerup = false;
     float attackPowerUpDuration = 10;
@@ -32,7 +33,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
         level = player.GetComponent<Prindle_PlayerLevel>();
         score = scoreText.GetComponent<Score>();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (attackPowerUp)
         {
@@ -63,18 +64,20 @@ public class Prindle_PlayerAttack : MonoBehaviour
                 timeUntilMelee = level.weaponSpeed;
                 print(timeUntilMelee);
                 aud.clip = hit;
-                
+                swung = true;
             }
         }
         else
         {
-            timeUntilMelee -= Time.deltaTime;
+            timeUntilMelee -= 1*Time.deltaTime;
+            
         }
         if (tacttTimer <= 0)
         {
             if(Input.GetMouseButtonDown(1) && level.canTact == true)
             {
                 tacttTimer = level.tactTimer;
+                //print(tacttTimer);
                 anim.SetTrigger("tact");
                 aud.clip = tact;
                 aud.Play();
@@ -82,7 +85,9 @@ public class Prindle_PlayerAttack : MonoBehaviour
         }
         else
         {
-            tacttTimer =-Time.deltaTime;
+            tacttTimer =- 1*Time.deltaTime;
+            //print(tacttTimer);
+            //print("what"+Time.deltaTime);
         }
         if (ultiTimer <= 0)
         {
@@ -90,42 +95,56 @@ public class Prindle_PlayerAttack : MonoBehaviour
             {
                 ultiTimer = level.ultTimer;
                 anim.SetTrigger("ult");
-                print("eeee");
+                //print("eeee");
                 aud.clip = ult;
                 aud.Play();
             }
+            
         }
         else
         {
-            ultiTimer -= Time.deltaTime;
+            ultiTimer -= 1*Time.deltaTime;
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Ethan2_Enemy")
+        if(other.tag == "Ethan2_Enemy" && this.tag != "Ultimate" && this.tag != "Tacticle")
         {
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             other.GetComponent<Prindle_Enemy>().hammerStun(level.stunAmmount);
             score.playerscore += 35;
-            Debug.Log("Enemy Hit");
-            aud.Play();
+            //Debug.Log("Enemy Hit");
+            if (swung)
+            {
+                aud.Play();
+                swung = false;
+            }
+            
         }
-        if (other.tag == "notEthan_Enemy")
+        if (other.tag == "notEthan_Enemy" && this.tag != "Ultimate" && this.tag != "Tacticle")
         {
             xp.GainXP(1);
             other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
             score.playerscore += 5;
-            Debug.Log("Enemy Hit");
-            aud.Play();
+            //Debug.Log("Enemy Hit");
+            if (swung)
+            {
+                aud.Play();
+                swung = false;
+            }
         }
-        if (other.tag == "EthanH_Enemy")
+        if (other.tag == "EthanH_Enemy" && this.tag != "Ultimate" && this.tag != "Tacticle")
         {
             other.GetComponent<Golem_EthanH>().takeDamage((int)damage);
             other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
             other.GetComponent<Golem_EthanH>().hammerStun(level.stunAmmount);
             score.playerscore += 15;
-            Debug.Log("Enemy Hit");
-            aud.Play();
+            //Debug.Log("Enemy Hit");
+            if (swung)
+            {
+                aud.Play();
+                swung = false;
+            }
         }
 
 
