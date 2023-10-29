@@ -26,13 +26,7 @@ public class PlayerAttack_EthanH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) 
-        {
-            level++;
-            Debug.Log(level);
-        }
-
-        if (attackRate <= 0f)
+        if (attackRate <= 0f && GetComponent<HealthManager_EthanH>().healthAmount > 0)
         {
             if (Input.GetMouseButtonDown(0))
             {

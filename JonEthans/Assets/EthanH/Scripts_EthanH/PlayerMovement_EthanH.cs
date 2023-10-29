@@ -83,12 +83,7 @@ public class PlayerMovement_EthanH : MonoBehaviour
             Destroy(other.gameObject);
             Debug.Log(health);
         }
-        if (other.tag == "Rocket")
-        {
-            GetComponent<HealthManager_EthanH>().TakeDamage(10);
-            anim.SetTrigger("Hit");
-        }
-        if (other.tag == "Knife")
+        if (other.tag == "ThrowingKnife")
         {
             GetComponent<KnifeManager>().knifeAmount++;
             if (GetComponent<KnifeManager>().knifeAmount > 3) GetComponent<KnifeManager>().knifeAmount = 3;
