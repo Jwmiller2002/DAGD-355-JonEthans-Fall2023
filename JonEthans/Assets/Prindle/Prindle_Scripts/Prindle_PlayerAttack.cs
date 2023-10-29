@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -19,7 +20,9 @@ public class Prindle_PlayerAttack : MonoBehaviour
     private Score score;
     AudioSource aud;
     public AudioClip hit, tact, ult;
+    public AudioClip bread;
     public XPManager_EthanH xp;
+    public HealthManager_EthanH HP;
     public hitEnemy tactHit,bigTacthit,ultHit;
     public Boolean swung =false;
     Boolean attackPowerUp = false;
@@ -29,6 +32,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        HP = player.GetComponent<HealthManager_EthanH>();
         xp = player.GetComponent<XPManager_EthanH>();
         aud = GetComponent<AudioSource>();
         level = player.GetComponent<Prindle_PlayerLevel>();
@@ -157,6 +161,15 @@ public class Prindle_PlayerAttack : MonoBehaviour
             attackPowerUp = true;
             Destroy(other.gameObject);
             print("powered");
+        }
+        if (other.tag ==("Baguette"))
+        {
+            GetComponent<HealthManager_EthanH>().Heal(25);
+            if (HP.healthAmount > 100) HP.healthAmount = 100;
+            aud.clip = bread;
+            aud.Play();
+            Destroy(other.gameObject);
+            //Debug.Log(health);
         }
     }
 }

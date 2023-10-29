@@ -22,6 +22,8 @@ public class EP_PlayerMove : MonoBehaviour
     public GameObject Tact,smolTact2, bigTact2;
     
     public HealthManager_EthanH HP;
+    
+   
     // Update is called once per frame
     private void Start()
     {
@@ -120,5 +122,6 @@ public class EP_PlayerMove : MonoBehaviour
 
             }
         }
+        
     }
 }
