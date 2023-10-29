@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 19140419}
   - component: {fileID: 19140421}
   - component: {fileID: 19140420}
+  - component: {fileID: 19140422}
   m_Layer: 0
   m_Name: TactSmolHitbox
   m_TagString: Tacticle
@@ -256,6 +257,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &19140422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19140418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb3a7a54663175419f277b8aac88538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilHit: 0
 --- !u!1 &32150591
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +281,7 @@ GameObject:
   - component: {fileID: 32150592}
   - component: {fileID: 32150594}
   - component: {fileID: 32150593}
+  - component: {fileID: 32150595}
   m_Layer: 0
   m_Name: TactBIGHitbox
   m_TagString: Tacticle
@@ -389,6 +404,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &32150595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32150591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb3a7a54663175419f277b8aac88538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilHit: 0
 --- !u!1 &52889663
 GameObject:
   m_ObjectHideFlags: 0
@@ -7011,6 +7039,10 @@ MonoBehaviour:
   player: {fileID: 1272604639}
   weapon: {fileID: 68337566}
   endScreen: {fileID: 981426522}
+  ult: {fileID: 1442055242}
+  Tact: {fileID: 892344656}
+  smolTact2: {fileID: 1727155274}
+  bigTact2: {fileID: 1290738851}
   HP: {fileID: 1272604651}
 --- !u!95 &1272604644
 Animator:
@@ -7046,17 +7078,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1272604644}
-  meleeSpeeed: 3.5
   damage: 10
   level: {fileID: 0}
   player: {fileID: 1272604639}
-  ultiTimer: 0
-  tacttTimer: 0
   scoreText: {fileID: 996803281}
   hit: {fileID: 8300000, guid: 82b7fdb6006f85040aa5d90af33af444, type: 3}
   tact: {fileID: 8300000, guid: 31fac08d9dcd0334f874b1ce2c01b370, type: 3}
   ult: {fileID: 8300000, guid: 450cc8575b0354347b2e2c6effe9eb3c, type: 3}
   xp: {fileID: 0}
+  tactHit: {fileID: 19140422}
+  bigTacthit: {fileID: 32150595}
+  ultHit: {fileID: 1346465098}
+  swung: 0
 --- !u!50 &1272604646
 Rigidbody2D:
   serializedVersion: 4
@@ -12358,6 +12391,7 @@ GameObject:
   - component: {fileID: 1346465096}
   - component: {fileID: 1346465095}
   - component: {fileID: 1346465097}
+  - component: {fileID: 1346465098}
   m_Layer: 1
   m_Name: UltHitbox
   m_TagString: Ultimate
@@ -12467,6 +12501,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1346465098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346465094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb3a7a54663175419f277b8aac88538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilHit: 0
 --- !u!1 &1381194031
 GameObject:
   m_ObjectHideFlags: 0
@@ -12831,7 +12878,7 @@ GameObject:
   - component: {fileID: 1665911344}
   - component: {fileID: 1665911345}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

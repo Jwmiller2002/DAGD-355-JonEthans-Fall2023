@@ -163,10 +163,10 @@ public class Prindle_Enemy : MonoBehaviour
         rb.velocity = direction * returnSpeed;
     }
 
-    private void OnParticleCollision(GameObject other)
+    public void abilityHit(Boolean ultHit)
     {
         print("particleHit");
-        if (other.tag == "Ultimate")
+        if (ultHit)
         {
             print("ult2");
             slowed = true;
@@ -176,24 +176,11 @@ public class Prindle_Enemy : MonoBehaviour
             }
 
         }
-        if (other.tag == "player")
-        {
-            print("playernotother");
-            if (other.tag == "Ultimate")
-            {
-                print("ult");
-                slowed = true;
-                if (level.ultBuff)
-                {
-                    stunned = true;
-                }
-                
-            }
-            if (other.tag == "Tacticle")
+        if (ultHit ==false)
             {
                 print("tact");
                 stunned = true;
             }
-        }
+        
     }
 }

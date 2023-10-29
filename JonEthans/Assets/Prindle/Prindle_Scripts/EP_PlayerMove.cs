@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class EP_PlayerMove : MonoBehaviour
@@ -17,11 +18,15 @@ public class EP_PlayerMove : MonoBehaviour
     public GameObject weapon;
     private Boolean isDead =false;
     public GameObject endScreen;
+    public GameObject ult;
+    public GameObject Tact,smolTact2, bigTact2;
+    
     public HealthManager_EthanH HP;
     // Update is called once per frame
     private void Start()
     {
         endScreen.SetActive(false);
+        
         HP = player.GetComponent<HealthManager_EthanH>();
     }
     void Update()

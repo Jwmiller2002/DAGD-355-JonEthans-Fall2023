@@ -20,11 +20,12 @@ public class Prindle_PlayerAttack : MonoBehaviour
     AudioSource aud;
     public AudioClip hit, tact, ult;
     public XPManager_EthanH xp;
+    public hitEnemy tactHit,bigTacthit,ultHit;
     public Boolean swung =false;
     Boolean attackPowerUp = false;
     Boolean gotAttackPowerup = false;
     float attackPowerUpDuration = 10;
-
+    
 
     private void Start()
     {
@@ -32,7 +33,9 @@ public class Prindle_PlayerAttack : MonoBehaviour
         aud = GetComponent<AudioSource>();
         level = player.GetComponent<Prindle_PlayerLevel>();
         score = scoreText.GetComponent<Score>();
+        
     }
+   
     private void FixedUpdate()
     {
         if (attackPowerUp)
@@ -108,7 +111,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Ethan2_Enemy" && this.tag != "Ultimate" && this.tag != "Tacticle")
+        if (other.tag == "Ethan2_Enemy")
         {
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage);
             other.GetComponent<Prindle_Enemy>().hammerStun(level.stunAmmount);
@@ -121,7 +124,8 @@ public class Prindle_PlayerAttack : MonoBehaviour
             }
             
         }
-        if (other.tag == "notEthan_Enemy" && this.tag != "Ultimate" && this.tag != "Tacticle")
+        
+        if (other.tag == "notEthan_Enemy" )
         {
             xp.GainXP(1);
             other.GetComponent<EnemyController_NotEthan>().TakeDamage(damage);
@@ -133,7 +137,7 @@ public class Prindle_PlayerAttack : MonoBehaviour
                 swung = false;
             }
         }
-        if (other.tag == "EthanH_Enemy" && this.tag != "Ultimate" && this.tag != "Tacticle")
+        if (other.tag == "EthanH_Enemy")
         {
             other.GetComponent<Golem_EthanH>().takeDamage((int)damage);
             other.GetComponent<Golem_EthanH>().anim.SetTrigger("Hit");
