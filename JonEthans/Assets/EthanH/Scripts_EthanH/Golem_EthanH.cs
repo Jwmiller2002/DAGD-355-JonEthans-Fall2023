@@ -86,7 +86,7 @@ public class Golem_EthanH : MonoBehaviour
             if (fireRate <= 0f)
             {
                 Fire();
-                fireRate = 2f;
+                fireRate = 5f;
             }
             else
             {

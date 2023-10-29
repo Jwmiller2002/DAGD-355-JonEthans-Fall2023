@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8881905434962593529}
   - component: {fileID: 8090118106005046436}
   - component: {fileID: 3900987549508036337}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Buff Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,7 +4838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6845794915880301470}
   - component: {fileID: 6279334780888944979}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Buff Area
   m_TagString: BuffArea
   m_Icon: {fileID: 0}
@@ -4906,7 +4906,7 @@ GameObject:
   - component: {fileID: 4212567191415087195}
   - component: {fileID: 6669812551673185810}
   - component: {fileID: 9136811192781082340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bleed Particle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9738,7 +9738,7 @@ GameObject:
   - component: {fileID: 4466818973307855315}
   - component: {fileID: 8636345292418844742}
   - component: {fileID: 4657834938971411988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Warlock
   m_TagString: notEthan_Enemy
   m_Icon: {fileID: 0}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2051998449733981865}
   - component: {fileID: 6839679915155709734}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 2088074791116403392}
   - component: {fileID: 8023872677582594594}
   - component: {fileID: 3128856687008867967}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: Golem
   m_TagString: EthanH_Enemy
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ MonoBehaviour:
   trail: {fileID: 7474913644199406972}
   bulletPos: {fileID: 1982893158987014544}
   knockedBackCD: 0
-  fireRate: 2
+  fireRate: 5
   health: 30
   speed: 2
   Dagger_Pickup: {fileID: 211973779832422495, guid: da1693266acdfda4c894852cf3cba1e9, type: 3}
@@ -274,7 +274,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1982893158987014544}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: BulletPosition(Enemy)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7054176446265552007}
   - component: {fileID: 7529295013200080786}
-  m_Layer: 3
+  m_Layer: 10
   m_Name: knockbackTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
