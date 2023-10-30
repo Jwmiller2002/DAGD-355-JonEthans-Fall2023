@@ -19,12 +19,16 @@ public class Golem_EthanH : MonoBehaviour
     public float fireRate;
     public int health = 30;
     public float speed;
+    public int bleedStacks = 0;
+    float bleedTime = 0;
     public GameObject Dagger_Pickup;
     public GameObject Bread_Pickup;
     public GameObject Grind_Pickup;
     public Prindle_PlayerLevel level;
     private Boolean stunned = false;
     private Boolean slowed = false;
+
+
 
     float horizontalInput;
     float verticalInput;
@@ -42,6 +46,11 @@ public class Golem_EthanH : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Bleed Code 
+        if (bleedStacks > 0)
+        {
+            Bleed();           
+        }
         //prindle stun code
         if (stunned)
         {
@@ -167,6 +176,18 @@ public class Golem_EthanH : MonoBehaviour
             print("tact");
             stunned = true;
         }
+
+    }
+
+    public void Bleed()
+    {       
+        bleedTime -= Time.deltaTime;
+        if (bleedTime <= 0)
+        {
+            takeDamage(bleedStacks);
+            bleedTime = 10;           
+        }
+
 
     }
 

@@ -24,6 +24,8 @@ public class Prindle_Enemy : MonoBehaviour
     public XPManager_EthanH xp;
     public Prindle_PlayerLevel level;
     public GameObject player;
+    public float bleedStacks = 0f;
+    float bleedTime = 0;
 
     private Boolean stunned = false;
     private Boolean slowed = false;
@@ -60,7 +62,10 @@ public class Prindle_Enemy : MonoBehaviour
         {
             GetTarget();
         }
-        
+        if (bleedStacks > 0)
+        {
+            Bleed();
+        }
 
 
         if (Vector2.Distance(target.position, transform.position) <= distanceToShoot)
@@ -182,5 +187,16 @@ public class Prindle_Enemy : MonoBehaviour
                 stunned = true;
             }
         
+    }
+    public void Bleed()
+    {
+        bleedTime -= Time.deltaTime;
+        if (bleedTime <= 0)
+        {
+            TakeDamage(bleedStacks);
+            bleedTime = 10;
+        }
+
+
     }
 }
