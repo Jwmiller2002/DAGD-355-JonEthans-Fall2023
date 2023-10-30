@@ -7,7 +7,7 @@ public class gameReset : MonoBehaviour
 {
     public void ResetTheGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(0);
         Debug.Log("click");
     }
 }
