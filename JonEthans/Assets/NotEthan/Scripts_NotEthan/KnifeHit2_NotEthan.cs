@@ -15,6 +15,7 @@ public class KnifeHit2_NotEthan : MonoBehaviour
     {
         bleedChance = 0;
         damage = 3;
+        
     }
 
     // Update is called once per frame
@@ -52,11 +53,33 @@ public class KnifeHit2_NotEthan : MonoBehaviour
         {
             Debug.Log("Hit");
             other.GetComponent<Prindle_Enemy>().TakeDamage(damage * ultRef.damageMultiplier * levelRef.knifeNumber);
+            bleedRoll = Random.Range(1, 10);
+            if (bleedRoll <= bleedChance)
+            {
+                other.GetComponent<EnemyController_NotEthan>().bleedStacks++;
+            }
+            if (ultRef.isInvisible == true)
+            {
+                other.GetComponent<EnemyController_NotEthan>().bleedStacks++;
+
+                ultRef.isInvisible = false;
+            }
         }
         else if (other.tag == "EthanH_Enemy")
         {
             Debug.Log("Hit");
             other.GetComponent<Golem_EthanH>().takeDamage(damage * ultRef.damageMultiplier * levelRef.knifeNumber);
+            bleedRoll = Random.Range(1, 10);
+            if (bleedRoll <= bleedChance)
+            {
+                other.GetComponent<Golem_EthanH>().bleedStacks++;
+            }
+            if (ultRef.isInvisible == true)
+            {
+                other.GetComponent<Golem_EthanH>().bleedStacks++;
+
+                ultRef.isInvisible = false;
+            }
         }
     }
 }
