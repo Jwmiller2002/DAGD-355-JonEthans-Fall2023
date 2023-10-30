@@ -56,11 +56,11 @@ public class KnifeHit2_NotEthan : MonoBehaviour
             bleedRoll = Random.Range(1, 10);
             if (bleedRoll <= bleedChance)
             {
-                other.GetComponent<EnemyController_NotEthan>().bleedStacks++;
+                other.GetComponent<Prindle_Enemy>().bleedStacks++;
             }
             if (ultRef.isInvisible == true)
             {
-                other.GetComponent<EnemyController_NotEthan>().bleedStacks++;
+                other.GetComponent<Prindle_Enemy>().bleedStacks++;
 
                 ultRef.isInvisible = false;
             }

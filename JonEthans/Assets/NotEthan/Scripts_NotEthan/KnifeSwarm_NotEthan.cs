@@ -5,11 +5,11 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public PlayerTeleport_NotEthan teleportRef;
-    XPManager_EthanH levelRef;
+    public XPManager_EthanH levelRef;
     // Start is called before the first frame update
     void Start()
     {
-        levelRef = GetComponent<XPManager_EthanH>();
+        //levelRef = GetComponent<XPManager_EthanH>();
     }
 
     // Update is called once per frame
@@ -29,6 +29,10 @@ public class NewBehaviourScript : MonoBehaviour
             else if (other.tag == "EthanH_Enemy")
             {
                 other.GetComponent<Golem_EthanH>().bleedStacks++;
+            }
+            else if (other.tag == "Ethan2_Enemy")
+            {
+                other.GetComponent<Prindle_Enemy>().bleedStacks++;
             }
                 teleportRef.isTeleport = false;
         }
