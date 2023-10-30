@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -11,6 +12,8 @@ public class PlayerAttack_NotEthan : MonoBehaviour
     [SerializeField] private float meleeSpeed;
 
     public AudioSource stab;
+
+    public PlayerController_NotEthan deadRef;
 
     float timeUntiMelee = .05f;
 
@@ -27,7 +30,7 @@ public class PlayerAttack_NotEthan : MonoBehaviour
     {
         if (timeUntiMelee <= 0f)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && deadRef.isDead == false)
             {
                 anim.SetTrigger("Attack");
                 timeUntiMelee = meleeSpeed;

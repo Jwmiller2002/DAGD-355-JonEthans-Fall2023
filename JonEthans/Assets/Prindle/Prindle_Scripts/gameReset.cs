@@ -8,5 +8,6 @@ public class gameReset : MonoBehaviour
     public void ResetTheGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("click");
     }
 }
